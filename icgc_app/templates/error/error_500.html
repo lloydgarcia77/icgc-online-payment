@@ -1,0 +1,13 @@
+{% extends 'error/error_base.html' %}
+
+{% block title %}
+ELR | 404 Error
+{% endblock title %}
+
+{% block content %}
+<h1>500</h1>
+<h4>Internal Server Error!</h4>
+<p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p>
+<a href="{% url 'ndrp_pcwp_app:index' %}"><span>»</span> Go to Homepage</a>
+</div>
+{% endblock %}

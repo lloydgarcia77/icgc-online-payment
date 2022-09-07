@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block title %}
+ICareGameCredits | Products
+{% endblock title%}
+
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock additional_css %}
+
+{% block nav_products %}
+
+<li class="nav-item">
+    <a href="{% url 'icgc_app:index' %}" class="nav-link text-uppercase active">Products</a>
+</li>
+{% endblock nav_products %}
+
+
+{% block content_body %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 col-4 p-5">
+            <img src="{% static 'images/icgc_logo.jpg' %}" alt="Business Logo" class="business-logo">
+
+            <h5 class="business-statement">
+                Shop with us to buy game credits at an affordable price. We have been providing cheap game credits at a
+                competitive price to gamers around the Philippines. So with us, you can enjoy great savings and continue
+                to play your favorite games
+            </h5>
+
+
+            <h3 class="social-media-title">Rearch us through</h3>
+            <ul class="social-media-links">
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/iCareGameCredits/">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a  target="_blank"  href="https://instagram.com/icaregamecredits?igshid=YmMyMTA2M2Y=">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8 col-8">
+            <form method="POST" class="mb-4">
+                <div class="row">
+
+                    <div class="col-9">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="search" class="form-control " placeholder="Search">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-default">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option selected="selected">Ascending</option>
+                                <option>Descending</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="games-container">
+                {% for g in games %}
+                <a class="game-item" href="{{ g.get_absolute_url_view }}">
+                    <img src="{{ g.img_thumbnail.url }}" alt="game image thumbnail">
+                    <p>{{g.title}}</p>
+                </a>
+
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content_body %}
+
+{% block rearscript %}
+{% endblock rearscript %}
