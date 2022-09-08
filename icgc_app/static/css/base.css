@@ -98,6 +98,10 @@
     box-shadow: rgba(236, 45, 125, 0.1) 0px 1px 0px, rgba(236, 45, 125, 0.1) 0px 8px 24px, rgba(236, 45, 125, 0.1) 0px 16px 48px;
 }
 
+.text-gold{
+    color: #E0C13D !important;
+}
+
 .bg-card-header{
     background: #2E2E2E !important;
 }

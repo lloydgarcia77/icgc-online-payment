@@ -168,7 +168,7 @@ class Game(models.Model):
         if self.img_wallpaper:
             if os.path.isfile(self.img_wallpaper.path) and os.path.exists(self.img_wallpaper.path):
                 os.remove(self.img_wallpaper.path)  
-        super(User, self).delete(*args,**kwargs)
+        super(Game, self).delete(*args,**kwargs)
 
     
     def save(self, *args, **kwargs):
@@ -185,9 +185,35 @@ class Amount(models.Model):
     pin = models.CharField(max_length=50, unique=True)
     sn = models.CharField(max_length=50, unique=True)
     amount = models.IntegerField()
+    points_to_earn = models.IntegerField(default=0)
     description = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.game.title
+    
+    def get_absolute_url_details(self):
+        return reverse('icgc_app:game_get_amount_details', args=[self.game.slug, self.id])
+
+class PaymentMethod(models.Model):
+    id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4)
+    img_thumbnail = models.ImageField(upload_to="game/payment_method/", blank=True, validators=[file_validator_image])
+    name = models.CharField(max_length=100, unique=True)
+    channel_code = models.CharField(max_length=100, unique=True)
+    description = models.TextField(blank=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+    def delete(self,*args,**kwargs):
+        if self.img_thumbnail:
+            if os.path.isfile(self.img_thumbnail.path) and os.path.exists(self.img_thumbnail.path):
+                os.remove(self.img_thumbnail.path)  
+       
+        super(PaymentMethod, self).delete(*args,**kwargs)
+
+    # def get_absolute_url_details(self):
+    #     return reverse('icgc_app:game_get_payment_method_details', args=[self.id])

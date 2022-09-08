@@ -1,0 +1,136 @@
+{% load static %}
+{% load humanize %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: tahoma, sans-ser;
+        }
+
+        .receipt {
+            background-color: #35363A;
+            padding: 10px;
+            color: #BABABA;
+            max-width: 500px;
+            border-radius: 5px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+        }
+
+        p {
+            text-align: justify;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #FFF;
+        }
+
+        .pin {
+            border: 1px solid #44D52C;
+            padding: 5px;
+            width: 100%;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            color: #44D52C;
+            text-align: center;
+            font-size: 1.2rem;
+            border-radius: 3px;
+            margin: 20px 0 0 0;
+        }
+
+        .sn {
+            text-align: right;
+            margin-top: 5px;
+            color: #FFF;
+        }
+
+        h1 {
+            font-weight: 300;
+            color: #44D52C;
+            text-align: center;
+            letter-spacing:1px;
+            text-transform: capitalize;
+        }
+
+        .title2{
+            color: #FDA700;
+            font-size: 1.2rem;
+        }
+
+        table{
+            width: 100%;
+            color: #FFF;
+        }
+        table tr td{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="receipt">
+
+        <h1>Purchase Successfully</h1>
+
+        <p>Dear ____</p>
+        <p>Thank you for using ICareGameCredits! Please keep this receipt for your own reference. Below is the details
+            of your purchase order:</p>
+
+
+        <p class="pin">
+            PIN 3123123123
+        </p>
+        <p class="sn">
+            S/N: AX324RWR213
+        </p>
+
+        <h1 class="title2"><u>Your order summary</u></h1>
+
+        
+        <table>
+            <tbody>
+                <tr>
+                    <td>Product</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Transaction Date</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Payment Method</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Payment Amount</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Points Earned</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Reference ID</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Transaction ID</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+
+    </div>
+
+</body>
+
+</html>

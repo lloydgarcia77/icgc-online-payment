@@ -107,10 +107,20 @@ admin.site.register(models.Game, GameAdmin)
 
 class AmountAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Amount._meta.get_fields() if 'fk' not in field.name]
-    list_editable = ("pin","sn","amount","description",)
+    list_editable = ("pin","sn","amount","points_to_earn","description",)
     list_per_page = 10
     search_fields = ("pin","sn","amount","description",)  
     date_hierarchy = 'date_created'
     ordering = ['date_created',]
 
 admin.site.register(models.Amount, AmountAdmin) 
+
+class PaymentMethodAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in models.PaymentMethod._meta.get_fields() if 'fk' not in field.name]
+    list_editable = ("name","channel_code","description",)
+    list_per_page = 10
+    search_fields = ("name","channel_code","description",)  
+    date_hierarchy = 'date_created'
+    ordering = ['date_created',]
+
+admin.site.register(models.PaymentMethod, PaymentMethodAdmin) 

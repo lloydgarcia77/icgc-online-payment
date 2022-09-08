@@ -151,6 +151,10 @@ ICareGameCredits | Game - {{ game.title }}
                 Go to website
                 <i class="fas fa-external-link-alt ml-1"></i>
             </a>
+            <a class="custom-button mt-3" href="{% url 'icgc_app:index' %}">
+                <i class="fas fa-arrow-left ml-1"></i>
+                Back
+            </a>
         </div>
         <div class="col-md-6 col-6">
             <div class="card" id="card-game-amount">
@@ -163,7 +167,7 @@ ICareGameCredits | Game - {{ game.title }}
                 <div class="card-body bg-card-body">
                     <div class="game-amount-container">
                         {% for a in game.fk_amount_game.all %}
-                        <button class="game-item">
+                        <button class="game-item" data-url="{{a.get_absolute_url_details}}">
                             {{ a.description }}
                         </button>
                         {% endfor %}
@@ -180,30 +184,17 @@ ICareGameCredits | Game - {{ game.title }}
                 </div>
                 <div class="card-body bg-card-body">
                     <div class="game-amount-container">
-                        <button class="game-item">
+                        {% for pm in payment_methods %}
+                        <button class="game-item"
+                            data-url="{% url 'icgc_app:game_get_payment_method_details' game.slug pm.id %}">
                             <div class="img-container">
-                                <img src="{% static 'images/payment logo/gcash.svg' %}" alt="payment logo">
+                                <img src="{{pm.img_thumbnail.url}}" alt="payment logo">
                             </div>
-                            GCash
+                            {{pm.name}}
                         </button>
-                        <button class="game-item">
-                            <div class="img-container">
-                                <img src="{% static 'images/payment logo/paymaya.png' %}" alt="payment logo">
-                            </div>
-                            PayMaya
-                        </button>
-                        <button class="game-item">
-                            <div class="img-container">
-                                <img src="{% static 'images/payment logo/grab_pay.png' %}" alt="payment logo">
-                            </div>
-                            GrabPay
-                        </button>
-                        <button class="game-item">
-                            <div class="img-container">
-                                <img src="{% static 'images/payment logo/shopeepay.png' %}" alt="payment logo">
-                            </div>
-                            ShopeePay
-                        </button>
+                        {% endfor %}
+
+
                     </div>
 
 
@@ -217,28 +208,62 @@ ICareGameCredits | Game - {{ game.title }}
                     </div>
                 </div>
                 <div class="card-body bg-card-body">
-                    <h5>
-                        To place order and receive receipt of the purchase, please enter an email address and phone
-                        number.
-                    </h5>
-                    <div class="form-group">
-                        <label>Email Address:</label>
-                        <input type="email" class="form-control" placeholder="Email address">
-                    </div>
-                    <div class="form-group">
-                        <label>Contact #:</label>
-                        <input type="text" class="form-control" placeholder="Contact number">
-                    </div>
+                    <form method="POST" id="billing-form">
+                        {% csrf_token %}
+                        <h5 class="text-justify mb-4">
+                            To place order and receive receipt of the purchase, please enter an email address and phone
+                            number.
+                        </h5>
+                        <div class="form-group">
+                            <label class="font-weight-light">Email Address:</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-light">Contact #:</label>
+                            <input type="text" name="contact" class="form-control" placeholder="Contact number">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-3">
+            <div class="card" id="order-summary">
+                <div class="card-body bg-card-body">
+                    <h4 class="mb-4">
+                        <i class="fas fa-shopping-cart"></i>
+                        Order Summary
+                    </h4>
+                    <dl class="row" style="row-gap: 10px;">
+                        <dt class="col-sm-6 font-weight-light">Product (Game Credit)</dt>
+                        <dd class="col-sm-6 text-right">{{ game.title }}</dd>
 
+                        <dt class="col-sm-6 font-weight-light">Payment Method</dt>
+                        <dd class="col-sm-6 text-right" id="pm">-</dd>
+
+                        <dt class="col-sm-6 font-weight-light">Subtotal</dt>
+                        <dd class="col-sm-6 text-right" id="stotal">-</dd>
+
+                    </dl>
+                    <hr>
+                    <dl class="row">
+                        <dt class="col-sm-6 font-weight-light">Total</dt>
+                        <dd class="col-sm-6 text-right" id="total"> - </dd>
+                        <dt class="col-sm-6 font-weight-light text-gold">Point to Earn</dt>
+                        <dd class="col-sm-6 text-right text-gold" id="points_earn_total"> - </dd>
+                    </dl>
+                    <button id="btn-checkout" class="btn btn-flat btn-block custom-button-lime mt-4">
+                        <i class="fas fa-money-check mr-1"></i>
+                        Checkout
+                    </button>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock content_body %}
 
 {% block rearscript %}
+<script src=" {% static 'js/micelleneous/getcookies.js' %}" defer></script>
 <script src=" {% static 'js/game_item/game_item.js' %}" defer></script>
 {% endblock rearscript %}
