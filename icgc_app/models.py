@@ -217,3 +217,18 @@ class PaymentMethod(models.Model):
 
     # def get_absolute_url_details(self):
     #     return reverse('icgc_app:game_get_payment_method_details', args=[self.id])
+
+
+class Transaction(models.Model):
+    transaction_id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4)
+    reference_id = models.UUIDField(unique=True, default=uuid.uuid4)
+    user = models.ForeignKey(User, related_name='fk_transactions_user', on_delete=models.SET_NULL, blank=True, null=True)
+    amount = models.ForeignKey(Amount, related_name='fk_transactions_amount', on_delete=models.SET_NULL, blank=True, null=True)
+    game = models.ForeignKey(Game, related_name='fk_transactions_game', on_delete=models.SET_NULL, blank=True, null=True)
+    payment_method = models.ForeignKey(PaymentMethod, related_name='fk_transactions_payment_method', on_delete=models.SET_NULL , blank=True, null=True)
+    mobile_number = models.CharField(max_length=15, blank=True, null=True)
+    transaction_date = models.DateTimeField(auto_now_add=True)
+
+    
+    def __str__(self):
+        return str(self.transaction_id)

@@ -1,0 +1,25 @@
+{% if form.errors %}
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h4><i class="icon fa fa-ban"></i> Form Validation Error!</h4>
+        <p style="padding-left: 10px;">Please correct error below: </p>
+
+        <ul class="outer errorlist">
+            {% if form.non_field_errors %}
+            <li>{{ form.non_field_errors }}</li>
+            {% endif %}
+            {% for field in form %}
+                {% if field.errors %}
+                <li>
+                    {{ field.label }}
+                    <ul class="inner errorlist">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

@@ -75,16 +75,16 @@
 
         <h1>Purchase Successfully</h1>
 
-        <p>Dear ____</p>
+        <p>Dear {{ transaction.user.get_full_name }}</p>
         <p>Thank you for using ICareGameCredits! Please keep this receipt for your own reference. Below is the details
             of your purchase order:</p>
 
 
-        <p class="pin">
-            PIN 3123123123
+        <p class="pin  text-uppercase">
+            PIN {{ transaction.amount.pin }}
         </p>
-        <p class="sn">
-            S/N: AX324RWR213
+        <p class="sn text-uppercase">
+            S/N: {{ transaction.amount.pin }}
         </p>
 
         <h1 class="title2"><u>Your order summary</u></h1>
@@ -94,35 +94,35 @@
             <tbody>
                 <tr>
                     <td>Product</td>
-                    <td>-</td>
+                    <td>{{ transaction.game.title }}</td>
                 </tr>
                 <tr>
                     <td>Transaction Date</td>
-                    <td>-</td>
+                    <td>{{ transaction.transaction_date }}</td>
                 </tr>
                 <tr>
                     <td>Payment Method</td>
-                    <td>-</td>
+                    <td>{{ transaction.payment_method.name }}</td>
                 </tr>
                 <tr>
                     <td>Payment Amount</td>
-                    <td>-</td>
+                    <td>₱{{ transaction.amount.amount|intcomma }}</td>
                 </tr>
                 <tr>
                     <td>Points Earned</td>
-                    <td>-</td>
+                    <td>{{ transaction.amount.points_to_earn|intcomma }}</td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>-</td>
+                    <td>₱{{ transaction.amount.amount|intcomma }}</td>
                 </tr>
                 <tr>
                     <td>Reference ID</td>
-                    <td>-</td>
+                    <td class="text-uppercase">{{ transaction.transaction_id }}</td>
                 </tr>
                 <tr>
                     <td>Transaction ID</td>
-                    <td>-</td>
+                    <td class="text-uppercase">{{ transaction.transaction_id }}</td>
                 </tr>
             </tbody>
             

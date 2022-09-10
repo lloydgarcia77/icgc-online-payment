@@ -49,7 +49,7 @@
     <!-- Sweet Alert -->
     <link rel="stylesheet" href="{% static 'sweetalert2-11.3.5/package/dist/sweetalert2.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
- 
+
     {% endblock css %}
 
     {% block additional_css %}
@@ -79,71 +79,88 @@
                     </button>
                     <div class="collapse navbar-collapse order-3" id="navbarCollapse">
 
-                        <ul class="navbar-nav">  
-                            
+                        <ul class="navbar-nav">
+
                             {% block nav_products %}
-                            
+
                             <li class="nav-item">
                                 <a href="{% url 'icgc_app:index' %}" class="nav-link text-uppercase">Products</a>
                             </li>
                             {% endblock nav_products %}
-                
+
+                            {% comment %}
+                            <!-- 
                             {% block nav_about_us %}
                             <li class="nav-item">
                                 <a href="{% url 'icgc_app:about_us' %}" class="nav-link text-uppercase">About Us</a>
                             </li>
                             {% endblock nav_about_us %}
-               
-                            
+
+
                             {% block nav_contact_us %}
                             <li class="nav-item">
                                 <a href="{% url 'icgc_app:contact_us' %}" class="nav-link text-uppercase">Contact Us</a>
-                            </li> 
+                            </li>
 
-                            {% endblock nav_contact_us %}
-                          
+                            {% endblock nav_contact_us %} -->
+                            {% endcomment %}
+
                         </ul>
 
-                        
+
                     </div>
                     <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item">
-                            <button class="btn btn-flat custom-button-danger">
-                                Register
-                            </button>
-                        </li>
-                        <li class="nav-item ml-3">
-                            <button class="btn btn-flat  custom-button-lime" >
-                                Login
-                            </button>
-                        </li>
+                            <a href="" class="nav-link">
+                                {{ request.user.email }}
+                            </a>
 
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" data-toggle="dropdown" href="#">
-                                <i class="far fa-bell"></i>
-                                <span class="badge badge-warning navbar-badge">15</span>
+                                <i class="fas fa-list"></i>
+                                <!-- <span class="badge badge-warning navbar-badge">15</span> -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                <span class="dropdown-header">15 Notifications</span>
+                                <span class="dropdown-header">Settings</span>
                                 <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-envelope mr-2"></i> 4 new messages
-                                    <span class="float-right text-muted text-sm">3 mins</span>
+                                <a href="{% url 'icgc_app:profile_page' %}" class="dropdown-item">
+                                    <i class="fas fa-user-tie mr-2"></i> Profile
+                                    <span class="float-right text-muted text-sm">Manage</span>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-users mr-2"></i> 8 friend requests
-                                    <span class="float-right text-muted text-sm">12 hours</span>
+                                <a href="{% url 'icgc_app:transactions' %}" class="dropdown-item">
+                                    <i class="fas fa-receipt mr-2"></i> Transactions
+                                    <span class="float-right text-muted text-sm">Products Ordered</span>
                                 </a>
+
                                 <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-file mr-2"></i> 3 new reports
-                                    <span class="float-right text-muted text-sm">2 days</span>
+                                <a href="{% url 'password_change' %}" class="dropdown-item">
+                                    <i class="fas fa-lock mr-2"></i> Password
+                                    <span class="float-right text-muted text-sm">Change/Update</span>
                                 </a>
+
                                 <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                                <a href="{% url 'logout' %}" class="dropdown-item dropdown-footer text-gold">
+                                    <i class="fas fa-power-off mr-1"></i> Logout</a>
                             </div>
                         </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'registration_page' %}" class="btn btn-flat custom-button-danger">
+                                Register
+                            </a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a href="{% url 'login' %}" class="btn btn-flat  custom-button-lime">
+                                Login
+                            </a>
+                        </li>
+
+
+                        {% endif %}
+
 
                     </ul>
                 </div>
@@ -161,8 +178,8 @@
 
             <!-- Main content -->
             <div class="content pt-5">
-                {% block content_body %} 
- 
+                {% block content_body %}
+
                 {% endblock content_body %}
 
 

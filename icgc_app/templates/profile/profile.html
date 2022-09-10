@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+ICareGameCredits | Profile
+{% endblock title%}
+
+{% block additional_css %}
+{% endblock additional_css %}
+
+{% block content_body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h1>Update your profile details</h1>
+                        <hr>
+
+                        {% include 'partials/_form_errors.html' %} 
+                        <div class="row">
+                            <!-- NOTE: Personal Details -->
+                            <div class="col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>First Name:</label>
+                                    {{ form.f_name }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Middle Name:</label>
+                                    {{ form.m_name }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name:</label>
+                                    {{ form.l_name }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender:</label>
+                                    {{ form.gender }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Age:</label>
+                                    {{ form.age }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Date of Birth:</label>
+                                    {{ form.dob }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact #:</label>
+                                    {{ form.contact_no }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Address:</label>
+                                    {{ form.address }}
+                                </div>
+                            </div>
+ 
+
+                            <button type="submit" class="btn btn-block btn-flat custom-button-lime">
+                                Update
+                            </button>
+                            <a class="text-white text-right btn-block mt-2" href="{% url 'login' %}"><u>Back to Login</u></a>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div> 
+{% endblock content_body %}
+
+{% block rearscript %}
+{% endblock rearscript %}

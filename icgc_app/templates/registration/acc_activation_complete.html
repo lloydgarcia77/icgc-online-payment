@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+ICareGameCredits | Email Activation
+{% endblock title%}
+
+{% block additional_css %}
+{% endblock additional_css %}
+
+
+{% block content_body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    {% if status %}
+                    <h3 class="text-center">
+                        <b class="text-success">Congratulations!</b> your account has been activated.
+                    </h3>
+                    {% else %}
+                    <h3 class="text-center">
+                        <b class="text-danger">
+                            You activation link is invalid or expired!
+                        </b>
+                    </h3>
+                    {% endif %}
+                    <p class="mt-3 mb-0">
+                        <a class="btn custom-button-danger btn-flat" href="{% url 'login' %}">Back to Login</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content_body %}
+
+
+{% block rearscript %}
+{% endblock rearscript %}

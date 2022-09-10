@@ -1,0 +1,11 @@
+{% load static %}
+{% load humanize %}
+
+{% for g in games %}
+<a class="game-item" href="{{ g.get_absolute_url_view }}">
+    <img src="{{ g.img_thumbnail.url }}" alt="game image thumbnail">
+    <p>{{g.title}}</p>
+</a>
+
+
+{% endfor %}

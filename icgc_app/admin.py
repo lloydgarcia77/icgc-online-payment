@@ -124,3 +124,13 @@ class PaymentMethodAdmin(admin.ModelAdmin):
     ordering = ['date_created',]
 
 admin.site.register(models.PaymentMethod, PaymentMethodAdmin) 
+
+class TransactionAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in models.Transaction._meta.get_fields() if 'fk' not in field.name]
+    list_editable = ("reference_id",)
+    list_per_page = 10
+    search_fields = ("transaction_id","reference_id")  
+    date_hierarchy = 'transaction_date'
+    ordering = ['transaction_date',]
+
+admin.site.register(models.Transaction, TransactionAdmin) 

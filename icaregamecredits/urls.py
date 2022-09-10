@@ -29,4 +29,29 @@ handler500 = 'icgc_app.views.error_500'
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('', include('icgc_app.urls')),
+
+    
+    #  NOTE: Login page
+    path('login/', views.login_page, name="login"), 
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+
+    #  NOTE: Registration
+    path('accounts/registration/', views.registration_page, name="registration_page"),
+    path('activate/<uidb64>/<token>/', views.activation_page, name='activation_page'), 
+
+
+    
+    #  NOTE: Update password
+    path('accounts/password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
+    path('accounts/password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+
+    # NOTE:  Password reset
+    path('accounts/password_reset/',auth_views.PasswordResetView.as_view(), name='password_reset'),
+    path('accounts/password_reset/done/',auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('accounts/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('accounts/reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+
+
+
+
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
