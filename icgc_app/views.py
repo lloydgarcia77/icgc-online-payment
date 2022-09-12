@@ -1,4 +1,4 @@
-from cmath import log
+
 from django.shortcuts import render, get_object_or_404
 from django.http import (
     JsonResponse,
@@ -45,6 +45,8 @@ from django.contrib.auth import get_user_model
 from django.http import HttpResponse
 from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
+
+import json
 
 # NOTE: Error Pages
 
@@ -238,7 +240,14 @@ def game_items(request, *args, **kwargs):
                 
                 response = payment_gateway.create_payment(transaction)
 
-                print(response)
+
+                """
+                    NOTE: https://www.programiz.com/python-programming/methods/built-in/vars
+                    NOTE: The vars() method returns the __dict__ (dictionary mapping) attribute of the given object.
+                """
+                transaction.charge_id = vars(response).get('id')
+                transaction.save()
+            
                 email_context = {
                     'game': game,
                     'email': email,
@@ -336,3 +345,15 @@ def transactions(request, *args, **kwargs):
 # ! success
 # ! cancell
 # ! failure
+
+
+@csrf_exempt
+def payment_status_callback(request, *args, **kwargs):
+    data = dict()
+
+    if request.is_ajax():
+        if request.method == 'POST':
+            print(request.POST)
+        return JsonResponse(data)
+    else:
+        raise Http404()
