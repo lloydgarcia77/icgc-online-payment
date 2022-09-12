@@ -355,5 +355,7 @@ def payment_status_callback(request, *args, **kwargs):
         if request.method == 'POST':
             print(request.POST)
         return JsonResponse(data)
-    else:
-        raise Http404()
+    
+
+    return render(request, 'payment_check_status/payment_check_status.html')
+    
