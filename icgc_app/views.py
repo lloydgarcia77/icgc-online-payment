@@ -354,8 +354,9 @@ def payment_status_callback(request, *args, **kwargs):
     if request.is_ajax():
         if request.method == 'POST':
             print(request.POST)
+            data['response'] = 200
         return JsonResponse(data)
     
 
-    return render(request, 'payment_check_status/payment_check_status.html')
+    # return render(request, 'payment_check_status/payment_check_status.html')
     
