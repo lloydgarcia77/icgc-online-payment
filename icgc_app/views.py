@@ -351,6 +351,10 @@ def transactions(request, *args, **kwargs):
 def payment_status_callback(request, *args, **kwargs):
     data = dict()
 
+
+
+    if request.method == 'POST':
+        print(request.POST)
     # if request.is_ajax():
     #     if request.method == 'POST':
     #         print(request.POST)
