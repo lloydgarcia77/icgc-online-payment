@@ -351,12 +351,12 @@ def transactions(request, *args, **kwargs):
 def payment_status_callback(request, *args, **kwargs):
     data = dict()
 
-    if request.is_ajax():
-        if request.method == 'POST':
-            print(request.POST)
-            data['response'] = 200
-        return JsonResponse(data)
-    
+    # if request.is_ajax():
+    #     if request.method == 'POST':
+    #         print(request.POST)
+    #         data['response'] = 200
+    #     return JsonResponse(data)
+    return HttpResponse(status=200)
 
     # return render(request, 'payment_check_status/payment_check_status.html')
     
