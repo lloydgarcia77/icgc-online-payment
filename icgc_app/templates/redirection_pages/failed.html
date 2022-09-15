@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block title %}
+ICareGameCredits | Failure Page
+{% endblock title%}
+
+
+{% block additional_css %}
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+<style> 
+
+    h1 {
+        color: #FF4858;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #404F5E;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    i.xmark {
+        color: #FF4858;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left: -15px;
+    }
+
+    div.logo {
+        border-radius: 200px;
+        height: 200px;
+        width: 200px;
+        background: #FFE0E3;
+        margin: 0 auto;
+    }
+
+    .card-custom {
+        text-align: center;
+        background: white;
+        padding: 60px;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px #C8D0D8;
+        display: inline-block;
+        margin: 0 auto;
+    }
+</style>
+
+{% endblock additional_css %}
+
+{% block content_body %}
+
+<div class="container text-center">
+    <div class="card-custom">
+        <div class="logo">
+            <i class="xmark">✗</i>
+        </div>
+        <h1>Failed</h1>
+        <p>There's an error on your transaction, <br> Please try to purchase again.</p>
+    </div>
+</div>
+{% endblock content_body %}

@@ -1,13 +1,21 @@
 from xendit import EWallet
 import xendit  
-
+from django.contrib.sites.shortcuts import get_current_site
+from django.urls import reverse
 from django.conf import settings
+import requests
 
 
-def create_payment(data): 
-    xendit.api_key = settings.XENDIT_API_KEY_DEV_PRIVATE
+xendit.api_key = settings.XENDIT_API_KEY_DEV_PRIVATE
 
+ 
+
+def create_payment(data, request):  
     
+    protocol = f'{request.scheme}://' 
+    domain = get_current_site(request).domain  
+
+   
     cart = []
     game_item = EWallet.helper_create_basket_item(
         reference_id = str(data.transaction_id),
@@ -33,14 +41,36 @@ def create_payment(data):
         # channel_code="PH_PAYMAYA",
         channel_code=data.payment_method.channel_code.upper(),
         channel_properties={
-            "success_redirect_url": "http://127.0.0.1:8000",
-            "failure_redirect_url": "http://127.0.0.1:8000",
-            "cancel_redirect_url": "http://127.0.0.1:8000",
+            "success_redirect_url": protocol + domain + str(reverse('icgc_app:success_page')),
+            "failure_redirect_url": protocol + domain + str(reverse('icgc_app:failure_page')),
+            "cancel_redirect_url": protocol + domain + str(reverse('icgc_app:cancel_page')),
         },
+        # ! ERror
+        # channel_properties={
+        #     "success_redirect_url": 'https://developers.xendit.co/api-reference/#authentication',
+        #     "failure_redirect_url": 'https://developers.xendit.co/api-reference/#authentication',
+        #     "cancel_redirect_url": 'https://developers.xendit.co/api-reference/#authentication',
+        # },
         basket=cart,
     ) 
 
     return ewallet_charge
 
+def check_transaction_status(charge_id): 
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+        charge_id=charge_id,
+    )
 
+    return ewallet_charge
 
+def void_transaction(charge_id):
+    response = requests.post(f"https://api.xendit.co/ewallets/charges/{charge_id}/void", auth=(settings.XENDIT_API_KEY_DEV_PRIVATE, ''))
+    return response
+
+def refund_transaction(charge_id):
+    response = requests.post(f"https://api.xendit.co/ewallets/charges/{charge_id}/refunds", auth=(settings.XENDIT_API_KEY_DEV_PRIVATE, ''))
+    return response
+
+def list_refund_transaction(charge_id):
+    response = requests.get(f"https://api.xendit.co/ewallets/charges/{charge_id}/refunds", auth=(settings.XENDIT_API_KEY_DEV_PRIVATE, ''))
+    return response

@@ -1,0 +1,68 @@
+{% load static %}
+{% load humanize %}
+
+
+{% for t in transactions %}
+<tr>
+    <td>
+        <span class="m-0">{{ t.transaction_id }}</span>
+        <button class="btn-cc btn bg-gradient-secondary btn-sm ml-1" data-toggle="tooltip"
+            data-placement="top" title="Copy to clipboard">
+            <i class="fas fa-copy"></i>
+        </button>
+    </td>
+    <td>
+        <span class="m-0">{{ t.reference_id }}</span>
+        <button class="btn-cc btn bg-gradient-secondary btn-sm ml-1" data-toggle="tooltip"
+            data-placement="top" title="Copy to clipboard">
+            <i class="fas fa-copy"></i>
+        </button>
+    </td>
+    <td>{{ t.game.name }} ({{ t.amount.description }})</td>
+    <td>{{ t.payment_method.name }}</td>
+    <td>{{ t.transaction_date }}</td>
+    <td>
+        <div class="btn-group">
+            <button type="button"
+                class="btn bg-gradient-secondary dropdown-toggle dropdown-icon"
+                data-toggle="dropdown" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right p-1" role="menu">
+                <button type="button" data-url="{{ t.get_absolute_url_check_status }}"
+                    class="btn btn-block bg-gradient-info btn-check-status" data-toggle="tooltip"
+                    data-placement="top" title="Status">
+                    <i class="fas fa-clipboard-list mr-1"></i> Status
+                </button>
+                <button data-url="{{ t.get_absolute_url_void }}" type="button"
+                    class="btn btn-block bg-gradient-secondary void"
+                    data-toggle="tooltip" data-placement="top" title="Void transaction">
+                    <i class="fas fa-times mr-1"></i> Void
+                </button>
+                <button data-url="{{ t.get_absolute_url_refund }}" type="button"
+                    class="btn btn-block bg-gradient-lime refund"
+                    data-toggle="tooltip" data-placement="top" title="Refund transaction">
+                    <i class="fas fa-hand-holding-usd mr-1"></i> Refund
+                </button>
+
+                <button data-url="{{ t.get_absolute_url_list_refund }}" type="button"
+                    class="btn btn-block bg-gradient-primary list-refund"
+                    data-toggle="tooltip" data-placement="top" title="List of refunds">
+                    <i class="fas fa-list-alt mr-1"></i> List Refund
+                </button>
+                <button data-url="{{ t.get_absolute_url_delete }}" type="button"
+                    class="btn btn-block bg-gradient-danger delete" data-toggle="tooltip"
+                    data-placement="top" title="Delete">
+                    <i class="fa fa-trash-alt mr-1"></i> Delete
+                </button>
+
+            </div>
+        </div>
+    </td>
+</tr>
+{% empty %}
+
+<tr>
+    <td class="text-center text-danger" colspan="6">No Available Records Found!</td>
+</tr>
+{% endfor %}

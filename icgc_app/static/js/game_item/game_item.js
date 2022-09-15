@@ -111,9 +111,9 @@ $(document).ready(function () {
                 formData.append('pm_id', order_summery.pm_id);
                 formData.append('amt_id', order_summery.amt_id);
                 //  Display the key/value pairs 
-                for (var pair of formData.entries()) {
-                    console.log(pair[0] + ', ' + pair[1]);
-                }
+                // for (var pair of formData.entries()) {
+                //     console.log(pair[0] + ', ' + pair[1]);
+                // }
 
                 $.ajax({
                     headers: {

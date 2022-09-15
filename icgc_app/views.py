@@ -46,6 +46,8 @@ from django.http import HttpResponse
 from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
 
+import requests
+
 import json
 
 # NOTE: Error Pages
@@ -238,7 +240,7 @@ def game_items(request, *args, **kwargs):
                 )
 
                 
-                response = payment_gateway.create_payment(transaction)
+                response = payment_gateway.create_payment(transaction, request)
 
 
                 """
@@ -280,6 +282,7 @@ def game_items(request, *args, **kwargs):
     }
     return render(request, template_name, context)
 
+
 @login_required
 def game_get_amount_details(request, *args, **kwargs):
     data = dict()
@@ -297,6 +300,7 @@ def game_get_amount_details(request, *args, **kwargs):
     else:
         raise Http404()
 
+
 @login_required
 def game_get_payment_method_details(request, *args, **kwargs):
     data = dict()
@@ -310,6 +314,7 @@ def game_get_payment_method_details(request, *args, **kwargs):
         return JsonResponse(data)
     else: 
         raise Http404()
+
 
 @login_required
 def profile_page(request, *args, **kwargs):
@@ -332,19 +337,153 @@ def profile_page(request, *args, **kwargs):
 
     return render(request, template, context=context)
 
+
 @login_required
 def transactions(request, *args, **kwargs): 
-    template_name = 'transactions/transactions.html'
- 
+    template_name = 'transactions/transactions.html' 
+    transactions = models.Transaction.objects.all().order_by('-transaction_date')
+    data = dict()
+    if request.is_ajax():
+        if request.method == 'GET':
+            transactions = models.Transaction.objects.all().order_by('-transaction_date')
+        elif request.method == 'POST':
+            search = request.POST.get('search') 
+            if search.strip():  
+                transactions = models.Transaction.objects.all().filter(Q(game__name__icontains=search) | Q(payment_method__name__icontains=search)).order_by('-transaction_date')
+  
+        data['html_table'] = render_to_string('transactions/transaction_list.html', {'transactions': transactions}, request)
+
+        return JsonResponse(data)
     context = {
         'user': request.user, 
+        'transactions': transactions,
     }
     return render(request, template_name, context)
 
 
-# ! success
-# ! cancell
-# ! failure
+@login_required
+def transaction_status(request, *args, **kwargs): 
+    template_name = 'transactions/check_status.html'
+    data = dict()
+
+    id = kwargs.get('id')
+    transaction = get_object_or_404(models.Transaction, transaction_id=id)
+
+    if request.is_ajax():
+        if request.method == 'POST':
+            response = payment_gateway.check_transaction_status(transaction.charge_id)
+             
+            response = json.dumps(vars(response))
+ 
+            context = {
+                'user': request.user,  
+            }
+
+            data['is_valid'] = True
+            data['response'] = response
+        return JsonResponse(data, status=200)
+    else:
+        raise Http404 
+
+@login_required
+def delete_transaction(request, *args, **kwargs): 
+    data = dict()
+    id = kwargs.get('id')
+    if request.is_ajax():
+        if request.method == 'POST':
+            transaction = get_object_or_404(models.Transaction, transaction_id=id) 
+            transaction.delete()
+
+            transactions = models.Transaction.objects.all().order_by('-transaction_date')
+
+            data['html_table'] = render_to_string('transactions/transaction_list.html', {'transactions': transactions}, request)
+            data['is_valid'] = True
+        return JsonResponse(data, status=200)
+    else:
+        raise Http404
+
+
+@login_required
+def void_transaction(request, *args, **kwargs): 
+    data = dict()
+    id = kwargs.get('id')
+    if request.is_ajax():
+        if request.method == 'POST':
+            transaction = get_object_or_404(models.Transaction, transaction_id=id)
+            
+            response = payment_gateway.void_transaction(transaction.charge_id)  
+            if response.status_code >= 200 and response.status_code < 300:
+                data['is_valid'] = True 
+            elif response.status_code >= 400 and response.status_code < 500:
+                data['is_valid'] = False
+                data['response'] = response.text
+        return JsonResponse(data)
+    else:
+        raise Http404
+
+
+@login_required
+def refund_transaction(request, *args, **kwargs): 
+    data = dict()
+    id = kwargs.get('id')
+    if request.is_ajax():
+        if request.method == 'POST':
+            transaction = get_object_or_404(models.Transaction, transaction_id=id)
+            response = payment_gateway.refund_transaction(transaction.charge_id)  
+            if response.status_code >= 200 and response.status_code < 300:
+                data['is_valid'] = True 
+            elif response.status_code >= 400 and response.status_code < 500:
+                data['is_valid'] = False
+                data['response'] = response.text  
+            
+            
+        return JsonResponse(data)
+    else:
+        raise Http404
+
+
+@login_required
+def list_refund_transaction(request, *args, **kwargs): 
+    data = dict()
+    id = kwargs.get('id')
+    if request.is_ajax():
+        if request.method == 'POST':
+            transaction = get_object_or_404(models.Transaction, transaction_id=id)
+            response = payment_gateway.list_refund_transaction(transaction.charge_id)  
+
+            if response.status_code >= 200 and response.status_code < 300: 
+                data['is_valid'] = True 
+                data['response'] = response.text  
+            elif response.status_code >= 400 and response.status_code < 500:
+                data['is_valid'] = False
+                data['response'] = response.text  
+    
+            
+        return JsonResponse(data)
+    else:
+        raise Http404
+
+
+@csrf_exempt
+def success_page(request, *args, **kwargs):
+    template_name = "redirection_pages/success.html"
+
+
+    return render(request, template_name)
+
+@csrf_exempt
+def failure_page(request, *args, **kwargs):
+    template_name = "redirection_pages/failed.html"
+
+
+    return render(request, template_name)
+
+@csrf_exempt
+def cancel_page(request, *args, **kwargs):
+    template_name = "redirection_pages/cancel.html"
+
+
+    return render(request, template_name)
 
 
 @csrf_exempt
@@ -354,13 +493,13 @@ def payment_status_callback(request, *args, **kwargs):
 
 
     if request.method == 'POST':
-        print(request.POST)
+        print(request)
         
     if request.is_ajax():
         if request.method == 'POST':
-            print(request.POST)
+            print(request)
             data['response'] = 200
-        return JsonResponse(data)
+        return JsonResponse(data, status=200)
     return HttpResponse(status=200)
 
     # return render(request, 'payment_check_status/payment_check_status.html')

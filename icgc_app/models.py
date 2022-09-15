@@ -232,3 +232,18 @@ class Transaction(models.Model):
     
     def __str__(self):
         return str(self.transaction_id)
+    
+    def get_absolute_url_check_status(self):
+        return reverse('icgc_app:transaction_status', args=[self.transaction_id])
+    
+    def get_absolute_url_delete(self):
+        return reverse('icgc_app:delete_transaction', args=[self.transaction_id])
+
+    def get_absolute_url_void(self):
+        return reverse('icgc_app:void_transaction', args=[self.transaction_id])
+
+    def get_absolute_url_refund(self):
+        return reverse('icgc_app:refund_transaction', args=[self.transaction_id])
+
+    def get_absolute_url_list_refund(self):
+        return reverse('icgc_app:list_refund_transaction', args=[self.transaction_id])
