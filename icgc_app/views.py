@@ -488,16 +488,16 @@ def cancel_page(request, *args, **kwargs):
 
 @csrf_exempt
 def payment_status_callback(request, *args, **kwargs):
-    data = dict()
-
-
+    data = dict() 
 
     if request.method == 'POST':
         print(request)
+        print(request.POST)
         
     if request.is_ajax():
         if request.method == 'POST':
             print(request)
+            print(request.POST)
             data['response'] = 200
         return JsonResponse(data, status=200)
     return HttpResponse(status=200)
