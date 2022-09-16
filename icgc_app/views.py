@@ -166,7 +166,7 @@ def index(request, *args, **kwargs):
             games = models.Game.objects.all().order_by('-date_created')
         elif request.method == 'POST':
             search = request.POST.get('search')
-            sort_order = request.POST.get('sort-order')
+            sort_order = request.POST.get('sort-order',0)
             if search.strip(): 
                 order = "name" if int(sort_order) == 0 else "-name"
                 games = models.Game.objects.all().filter(Q(name__icontains=search) | Q(title__icontains=search)).order_by(order)
@@ -237,6 +237,7 @@ def game_items(request, *args, **kwargs):
                     payment_method=pm,
                     game=game, 
                     mobile_number=contact,
+                    email=email,
                 )
 
                 
@@ -248,31 +249,32 @@ def game_items(request, *args, **kwargs):
                     NOTE: The vars() method returns the __dict__ (dictionary mapping) attribute of the given object.
                 """
                 transaction.charge_id = vars(response).get('id')
+
                 transaction.save()
             
-                email_context = {
-                    'game': game,
-                    'email': email,
-                    'contact': contact,
-                    'pm': pm,
-                    'amt': amt,
-                    'transaction': transaction,
-                }
+                # email_context = {
+                #     'game': game,
+                #     'email': email,
+                #     'contact': contact,
+                #     'pm': pm,
+                #     'amt': amt,
+                #     'transaction': transaction,
+                # }
 
     
-                from_email = 'icaregamecredits@gmail.com'
-                # to = 'lloydgarcia77@gmail.com'
+                # from_email = 'icaregamecredits@gmail.com'
+                # # to = 'lloydgarcia77@gmail.com'
                 
-                subject = 'ICareGameCredits Purchase Order Receipt'
-                html_message = render_to_string('email/transaction_success.html', email_context)
-                plain_message = strip_tags(html_message)
-                send_mail(
-                    subject,
-                    plain_message,
-                    from_email,
-                    [email,],
-                    html_message=html_message,
-                ) 
+                # subject = 'ICareGameCredits Purchase Order Receipt'
+                # html_message = render_to_string('email/transaction_success.html', email_context)
+                # plain_message = strip_tags(html_message)
+                # send_mail(
+                #     subject,
+                #     plain_message,
+                #     from_email,
+                #     [email,],
+                #     html_message=html_message,
+                # ) 
                 data['is_valid'] = True 
         return JsonResponse(data)
 
@@ -341,7 +343,7 @@ def profile_page(request, *args, **kwargs):
 @login_required
 def transactions(request, *args, **kwargs): 
     template_name = 'transactions/transactions.html' 
-    transactions = models.Transaction.objects.all().order_by('-transaction_date')
+    transactions = models.Transaction.objects.all().filter(Q(user=request.user)).order_by('-transaction_date')
     data = dict()
     if request.is_ajax():
         if request.method == 'GET':
@@ -367,7 +369,7 @@ def transaction_status(request, *args, **kwargs):
     data = dict()
 
     id = kwargs.get('id')
-    transaction = get_object_or_404(models.Transaction, transaction_id=id)
+    transaction = get_object_or_404(models.Transaction, transaction_id=id, user=request.user)
 
     if request.is_ajax():
         if request.method == 'POST':
@@ -385,13 +387,56 @@ def transaction_status(request, *args, **kwargs):
     else:
         raise Http404 
 
+
+@login_required
+def transaction_po_send_mail(request, *args, **kwargs):
+    data = dict()
+    id = kwargs.get('id')
+    transaction = get_object_or_404(models.Transaction, transaction_id=id, user=request.user)
+
+    if request.is_ajax():
+        if request.method == 'POST':
+            response = payment_gateway.check_transaction_status(transaction.charge_id)
+             
+            response = vars(response) 
+
+            if response.get('status').lower() == 'SUCCEEDED'.lower(): 
+                email_context = {
+              
+                    'transaction': transaction,
+                }
+
+    
+                from_email = 'icaregamecredits@gmail.com' 
+                recipient = transaction.email if transaction.email else request.user.email
+                
+                subject = 'ICareGameCredits Purchase Order Receipt'
+                html_message = render_to_string('email/transaction_success.html', email_context)
+                plain_message = strip_tags(html_message)
+                send_mail(
+                    subject,
+                    plain_message,
+                    from_email,
+                    [recipient,],
+                    html_message=html_message,
+                ) 
+                data['is_valid'] = True 
+            else:
+                data['is_valid'] = False  
+        return JsonResponse(data)
+    else:
+
+        raise Http404
+
+
+
 @login_required
 def delete_transaction(request, *args, **kwargs): 
     data = dict()
     id = kwargs.get('id')
     if request.is_ajax():
         if request.method == 'POST':
-            transaction = get_object_or_404(models.Transaction, transaction_id=id) 
+            transaction = get_object_or_404(models.Transaction, transaction_id=id, user=request.user) 
             transaction.delete()
 
             transactions = models.Transaction.objects.all().order_by('-transaction_date')
@@ -409,7 +454,7 @@ def void_transaction(request, *args, **kwargs):
     id = kwargs.get('id')
     if request.is_ajax():
         if request.method == 'POST':
-            transaction = get_object_or_404(models.Transaction, transaction_id=id)
+            transaction = get_object_or_404(models.Transaction, transaction_id=id, user=request.user)
             
             response = payment_gateway.void_transaction(transaction.charge_id)  
             if response.status_code >= 200 and response.status_code < 300:
@@ -428,7 +473,7 @@ def refund_transaction(request, *args, **kwargs):
     id = kwargs.get('id')
     if request.is_ajax():
         if request.method == 'POST':
-            transaction = get_object_or_404(models.Transaction, transaction_id=id)
+            transaction = get_object_or_404(models.Transaction, transaction_id=id, user=request.user)
             response = payment_gateway.refund_transaction(transaction.charge_id)  
             if response.status_code >= 200 and response.status_code < 300:
                 data['is_valid'] = True 
@@ -448,7 +493,7 @@ def list_refund_transaction(request, *args, **kwargs):
     id = kwargs.get('id')
     if request.is_ajax():
         if request.method == 'POST':
-            transaction = get_object_or_404(models.Transaction, transaction_id=id)
+            transaction = get_object_or_404(models.Transaction, transaction_id=id, user=request.user)
             response = payment_gateway.list_refund_transaction(transaction.charge_id)  
 
             if response.status_code >= 200 and response.status_code < 300: 

@@ -9,6 +9,7 @@ urlpatterns = [
     path('profile/', views.profile_page, name='profile_page'), 
     path('transactions/', views.transactions, name='transactions'), 
     path('transactions-status/<uuid:id>/', views.transaction_status, name='transaction_status'), 
+    path('transactions-send-po-to-email/<uuid:id>/', views.transaction_po_send_mail, name='transaction_po_send_mail'), 
     path('transactions-delete/<uuid:id>/', views.delete_transaction, name='delete_transaction'), 
     path('transactions-void/<uuid:id>/', views.void_transaction, name='void_transaction'), 
     path('transactions-refund/<uuid:id>/', views.refund_transaction, name='refund_transaction'), 

@@ -173,6 +173,63 @@ $(function () {
         })
     });
 
+    $("table tbody").on('click', "button.btn-send-mail", function (e) {
+        let url = $(this).data('url');
+        let button = $(this);
+
+        Swal.fire({
+            title: 'Are you sure?',
+            html: `Do you want to <b class="text-success">Retrieve purchase details of the game you bought</b>  <b class="text-warning"> through E-mail?</b>`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3C92B3',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Please send it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    // https://docs.djangoproject.com/en/2.2/ref/csrf/
+                    headers: {
+                        "X-CSRFToken": getCookie("csrftoken")
+                    },
+                    url: url,
+                    type: "POST",
+                    mode: 'same-origin', // Do not send CSRF token to another domain. 
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function () {
+                        button.prop('disabled', true);
+                        toastr.info("Please wait, your transaction is being loaded!");
+                        $('[data-toggle="tooltip"]').tooltip("hide");
+                    },
+                    success: (data) => {
+                        if (data.is_valid) {
+                            Swal.fire(
+                                'Email has been sent!',
+                                'We have sen\'t the game details and purchase info of the product you bought through your mail.',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Unpaid/Voided/Refunded/Faild Transaction',
+                                'Please pay the bills on this transaction before you can retrieve the game details you bought!',
+                                'error'
+                            )
+                        }
+                    },
+                    complete: (data) => {
+                        button.prop('disabled', false);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        toastr.error(thrownError + '\n' + xhr.status + '\n' + ajaxOptions);
+                    }
+                })
+            }
+        })
+
+    });
+
     $("table tbody").on('click', 'button.delete', function (e) {
         let url = $(this).data("url");
 
@@ -203,8 +260,9 @@ $(function () {
                                 'Transaction been successfully deleted!',
                                 'success'
                             );
-                            $("table tbody").html(data.html_table)
-
+                            $("table tbody")
+                                .html(data.html_table)
+                                .find('[data-toggle="tooltip"]').tooltip();
                         } else {
                             toastr.error("There's an error upon deleting this transaction!")
                         }
@@ -348,8 +406,8 @@ $(function () {
                     success: (data) => {
 
                         let response = JSON.parse(data.response);
- 
-                        if (data.is_valid) { 
+
+                        if (data.is_valid) {
 
                             let items = response.data.reduce((previousValue, currentValue) => (
                                 previousValue + `<tr> 
@@ -360,7 +418,7 @@ $(function () {
                                     <td>${getDateAndTime(currentValue.created)}</td>
                                     <td>${getDateAndTime(currentValue.updated)}</td>
                                 </tr>`
-                                ), "")
+                            ), "")
                             $("#modal-xl").modal("show").find(".modal-content").html(`
                                 <div class="modal-header p-3">
                                     <h5 class="modal-title">Transaction Status</h5>
@@ -407,9 +465,30 @@ $(function () {
         })
     })
 
+    $("input[type='search']").on('search', function () {
+        let form = $(this);
+        $.ajax({
+            data: form.serialize(),
+            cache: false,
+            type: "POST",
+            dataType: 'json',
+            beforeSend: () => {
+            },
+            success: (data) => {
+                $("table tbody").html(data.html_table).find('[data-toggle="tooltip"]').tooltip();
+                toastr.info("Filter successful!")
+            },
+            complete: (data) => {
+            },
+            error: (data) => {
+
+            }
+        });
+    });
+
     $("#form-search input[type='search']").keyup(function (e) {
         let form = $('#form-search');
- 
+
         if ($(this).val() === "") {
             $.ajax({
                 data: form.serialize(),
@@ -419,7 +498,7 @@ $(function () {
                 beforeSend: () => {
                 },
                 success: (data) => {
-                    $("table tbody").html(data.html_table)
+                    $("table tbody").html(data.html_table).find('[data-toggle="tooltip"]').tooltip();
                     toastr.info("Filter successful!")
                 },
                 complete: (data) => {
@@ -434,25 +513,25 @@ $(function () {
 
     $("#form-search").on("submit", function (e) {
         e.preventDefault();
-        let form = $(this);
+        // let form = $(this);
 
-        $.ajax({
-            data: form.serialize(),
-            cache: false,
-            type: "POST",
-            dataType: 'json',
-            beforeSend: () => {
-            },
-            success: (data) => {
-                $("table tbody").html(data.html_table)
-                toastr.info("Filter successful!")
-            },
-            complete: (data) => {
-            },
-            error: (data) => {
+        // $.ajax({
+        //     data: form.serialize(),
+        //     cache: false,
+        //     type: "POST",
+        //     dataType: 'json',
+        //     beforeSend: () => {
+        //     },
+        //     success: (data) => {
+        //         $("table tbody").html(data.html_table).find('[data-toggle="tooltip"]').tooltip();
+        //         toastr.info("Filter successful!")
+        //     },
+        //     complete: (data) => {
+        //     },
+        //     error: (data) => {
 
-            }
-        });
+        //     }
+        // });
     })
 
 

@@ -226,6 +226,7 @@ class Transaction(models.Model):
     amount = models.ForeignKey(Amount, related_name='fk_transactions_amount', on_delete=models.SET_NULL, blank=True, null=True)
     game = models.ForeignKey(Game, related_name='fk_transactions_game', on_delete=models.SET_NULL, blank=True, null=True)
     payment_method = models.ForeignKey(PaymentMethod, related_name='fk_transactions_payment_method', on_delete=models.SET_NULL , blank=True, null=True)
+    email = models.EmailField(blank=True, null=True, max_length=50)
     mobile_number = models.CharField(max_length=15, blank=True, null=True)
     transaction_date = models.DateTimeField(auto_now_add=True)
     charge_id = models.CharField(max_length=255, blank=True, null=True)
@@ -247,3 +248,6 @@ class Transaction(models.Model):
 
     def get_absolute_url_list_refund(self):
         return reverse('icgc_app:list_refund_transaction', args=[self.transaction_id])
+    
+    def get_absolute_url_send_po_to_email(self):
+        return reverse('icgc_app:transaction_po_send_mail', args=[self.transaction_id])

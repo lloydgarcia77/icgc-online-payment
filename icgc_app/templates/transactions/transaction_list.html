@@ -34,6 +34,11 @@
                     data-placement="top" title="Status">
                     <i class="fas fa-clipboard-list mr-1"></i> Status
                 </button>
+                <button type="button" data-url="{{ t.get_absolute_url_send_po_to_email }}"
+                    class="btn btn-block bg-gradient-warning btn-send-mail" data-toggle="tooltip"
+                    data-placement="top" title="Send purchase order to email">
+                    <i class="fas fa-envelope mr-1"></i> Retrieve Email
+                </button>
                 <button data-url="{{ t.get_absolute_url_void }}" type="button"
                     class="btn btn-block bg-gradient-secondary void"
                     data-toggle="tooltip" data-placement="top" title="Void transaction">
