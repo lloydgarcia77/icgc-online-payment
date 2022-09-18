@@ -80,7 +80,7 @@ $(function () {
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div  class="modal-body table-responsive p-0" style="min-height: calc(100vh - 200px);">
                             <table class="table table-bordered">
                         
                                 <tbody>
@@ -426,7 +426,7 @@ $(function () {
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div  class="modal-body table-responsive p-0" style="min-height: calc(100vh - 200px);">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
