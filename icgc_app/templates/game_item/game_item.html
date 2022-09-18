@@ -24,7 +24,7 @@ ICareGameCredits | Game - {{ game.title }}
 <div class="container">
     <div class="row">
 
-        <div class="col-md-3 col-3">
+        <div class="col-md-3">
             <img src="{{ game.img_wallpaper.url }}" alt="Game Image" class="bg-game-wallpaper">
             <h4 class="mt-4 text-uppercase">{{ game.title }}</h4>
             <hr>
@@ -35,12 +35,12 @@ ICareGameCredits | Game - {{ game.title }}
                 Go to website
                 <i class="fas fa-external-link-alt ml-1"></i>
             </a>
-            <a class="custom-button mt-3" href="{% url 'icgc_app:index' %}">
+            <a class="custom-button mt-3 mb-3" href="{% url 'icgc_app:index' %}">
                 <i class="fas fa-arrow-left ml-1"></i>
                 Back
             </a>
         </div>
-        <div class="col-md-6 col-6">
+        <div class="col-md-6">
             <div class="card" id="card-game-amount">
                 <div class="card-header bg-card-header">
                     <div class="card-title ">
@@ -110,7 +110,7 @@ ICareGameCredits | Game - {{ game.title }}
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-3">
+        <div class="col-md-3">
             <div class="card" id="order-summary">
                 <div class="card-body bg-card-body">
                     <h4 class="mb-4">
