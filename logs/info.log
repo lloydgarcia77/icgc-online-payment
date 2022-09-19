@@ -57,3 +57,10 @@ INFO 2022-09-19 19:11:38,730 basehttp 17924 19304 "GET /static/js/micelleneous/g
 INFO 2022-09-19 19:11:38,731 basehttp 17924 8132 "GET /static/js/index.js HTTP/1.1" 200 1928
 INFO 2022-09-19 19:11:39,296 basehttp 17924 7816 "GET /media/game/thumbnail/FTFUThumbnail.jpg HTTP/1.1" 200 1195570
 INFO 2022-09-19 19:11:39,307 basehttp 17924 7816 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-09-19 19:23:55,365 autoreload 19056 23100 Watching for file changes with StatReloader
+INFO 2022-09-19 19:24:08,572 basehttp 19056 4304 "GET / HTTP/1.1" 200 15130
+INFO 2022-09-19 19:24:13,919 basehttp 19056 4304 "GET / HTTP/1.1" 200 15130
+INFO 2022-09-19 19:33:27,471 autoreload 19056 23100 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-09-19 19:33:31,515 autoreload 2776 22472 Watching for file changes with StatReloader
+INFO 2022-09-19 19:33:54,997 views 2776 2768 TAE
+INFO 2022-09-19 19:33:55,012 basehttp 2776 2768 "GET / HTTP/1.1" 200 15130

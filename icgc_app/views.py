@@ -46,10 +46,9 @@ from django.http import HttpResponse
 from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
 
-import requests
+import requests, logging, traceback, json 
 
-import json
-
+logger = logging.getLogger('django')
 # NOTE: Error Pages
 
 def error_404(request, exception):
@@ -158,7 +157,7 @@ def registration_page(request):
 def index(request, *args, **kwargs): 
     template_name = 'index.html'
     data = dict()
-
+    logger.info("TAE")
     games = models.Game.objects.all().order_by('-date_created')
 
     if request.is_ajax():
