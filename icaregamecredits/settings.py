@@ -198,3 +198,52 @@ SERVER_EMAIL = os.getenv("EMAIL_HOST_ICGC")
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 EMAIL_USE_TLS = True
 EMAIL_TIMEOUT = 20
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'loggers': {
+        'django':{
+            'handlers': ['app_debug', 'app_info', 'app_warning', 'app_error', 'app_critical'],
+            'level': 'DEBUG'
+        }
+    },
+    'handlers': {
+        'app_debug': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': './logs/debug.log',
+            'formatter': 'logsformat',
+        },
+        'app_info': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': './logs/info.log',
+            'formatter': 'logsformat',
+        },
+        'app_warning': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': './logs/warning.log',
+            'formatter': 'logsformat',
+        },
+        'app_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': './logs/error.log',
+            'formatter': 'logsformat',
+        },
+        'app_critical': {
+            'level': 'CRITICAL',
+            'class': 'logging.FileHandler',
+            'filename': './logs/critical.log',
+            'formatter': 'logsformat',
+        },
+    },
+    'formatters': {
+        'logsformat': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        }
+    },
+}
