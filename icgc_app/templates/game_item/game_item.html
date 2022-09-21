@@ -8,7 +8,7 @@
 ICareGameCredits | Game - {{ game.title }}
 {% endblock title%}
 
-{% block additional_css %} 
+{% block additional_css %}
 <link rel="stylesheet" href="{% static 'css/game_item.css' %}">
 {% endblock additional_css %}
 
@@ -39,6 +39,30 @@ ICareGameCredits | Game - {{ game.title }}
                 <i class="fas fa-arrow-left ml-1"></i>
                 Back
             </a>
+
+            <h4 class="mt-4 text-capitalize">How to recharge via ICareGamesCredit Webshop?</h4> 
+            <ol class="pl-3">
+                <li>Choose the game you want to buy points.</li>
+                <li>Select the amount of point you desire.</li>
+                <li>Choose the payment method you want to buy with.</li>
+                <li>Enter the details of the receipient from which the game point details will be sent.</li>
+                <li>Review the order summary and click checkout (If you enter the wrong email you can delete the transaction record on the transaction page on the top right corner of the page, beside you email address.)</li>
+                <li>Go to transaction on the top-right page and select  transactions on the dropdown list.</li>
+                <li>Navigate the action button of the latest record (top most record) and slide through the right and select the dropdown button to access the button actions.</li>
+                <li>Click the status and select the <b class="text-uppercase text-success">Pay Desktop/Mobile Url</b> and you will be redirected on the payment page.</li>
+                <li>Pay the amount using the payment method you selected</li>
+                <li>You will be redirected to the success page</li>
+                <li>To claim your PIN code and PO Details, Go again to the transactions page (You can claim it the status of the payment is succeed)</li>
+                <li>On the same record on the action button select the sent mail button</li>
+                <li>We will automatically send you the PIN Code and PO Details of the game credit you've purchased</li>
+                <li>Go to you email and retrieve your PO game credits, Enjoy!</li>
+            </ol>
+            <h4 class="mt-4 text-capitalize text-warning">NOTE:</h4> 
+            <ul>
+                <li>You can delete the trasaction just in case you've enter an invalid email during the purchasing process and you can re-buy it again!</li>
+                <li>You can view the status of the payment on the status pop up window!</li>
+            </ul>
+
         </div>
         <div class="col-md-6">
             <div class="card" id="card-game-amount">
