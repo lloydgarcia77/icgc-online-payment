@@ -116,16 +116,7 @@ $(function () {
                                         <td>
                                         <table class="table table-bordered p-0 m-0">
                                             <tbody>
-                                                <tr>
-                                                    <td >
-                                                        <div id="qr_code_desktop" class="qrcode-image-container">
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <div id="qr_code_mobile"  class="qrcode-image-container">
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            
                                                 <tr>
                                                     <td>
                                                         <a href="${response.actions.desktop_web_checkout_url}" target="_blank" class="btn bg-gradient-success btn-block">
@@ -158,8 +149,8 @@ $(function () {
                         </div>   
                     `);
 
-                    new QRCode(m.find("#qr_code_desktop")[0], { ...qrcode_settings, text: response.actions.desktop_web_checkout_url });
-                    new QRCode(m.find("#qr_code_mobile")[0], { ...qrcode_settings, text: response.actions.desktop_web_checkout_url });
+                    // new QRCode(m.find("#qr_code_desktop")[0], { ...qrcode_settings, text: response.actions.desktop_web_checkout_url });
+                    // new QRCode(m.find("#qr_code_mobile")[0], { ...qrcode_settings, text: response.actions.desktop_web_checkout_url });
 
 
                 }
