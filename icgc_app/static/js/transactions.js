@@ -504,25 +504,25 @@ $(function () {
 
     $("#form-search").on("submit", function (e) {
         e.preventDefault();
-        // let form = $(this);
+        let form = $(this);
 
-        // $.ajax({
-        //     data: form.serialize(),
-        //     cache: false,
-        //     type: "POST",
-        //     dataType: 'json',
-        //     beforeSend: () => {
-        //     },
-        //     success: (data) => {
-        //         $("table tbody").html(data.html_table).find('[data-toggle="tooltip"]').tooltip();
-        //         toastr.info("Filter successful!")
-        //     },
-        //     complete: (data) => {
-        //     },
-        //     error: (data) => {
+        $.ajax({
+            data: form.serialize(),
+            cache: false,
+            type: "POST",
+            dataType: 'json',
+            beforeSend: () => {
+            },
+            success: (data) => {
+                $("table tbody").html(data.html_table).find('[data-toggle="tooltip"]').tooltip();
+                toastr.info("Filter successful!")
+            },
+            complete: (data) => {
+            },
+            error: (data) => {
 
-        //     }
-        // });
+            }
+        });
     })
 
 
