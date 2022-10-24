@@ -191,7 +191,7 @@ class Amount(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.game.title
+        return f'{self.game.title} ({self.amount}) - {self.points_to_earn}pte'
     
     def get_absolute_url_details(self):
         return reverse('icgc_app:game_get_amount_details', args=[self.game.slug, self.id])

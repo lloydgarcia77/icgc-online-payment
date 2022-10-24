@@ -46,7 +46,7 @@ from django.http import HttpResponse
 from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
 
-import requests, logging, traceback, json 
+import requests, logging, traceback, json,xendit
 
 logger = logging.getLogger('django')
 # NOTE: Error Pages
@@ -372,16 +372,18 @@ def transaction_status(request, *args, **kwargs):
 
     if request.is_ajax():
         if request.method == 'POST':
-            response = payment_gateway.check_transaction_status(transaction.charge_id)
-             
-            response = json.dumps(vars(response))
- 
-            context = {
-                'user': request.user,  
-            }
-
-            data['is_valid'] = True
-            data['response'] = response
+            
+            try:
+                response = payment_gateway.check_transaction_status(transaction.charge_id)
+                
+                response = json.dumps(vars(response))
+                
+                # print(json.dumps(json.loads(response), indent=4)) 
+                data['is_valid'] = True
+                data['response'] = response
+            except xendit.xendit_error.XenditError as e:
+                data['is_valid'] = False
+                data['error'] = f'Error: {e}'
         return JsonResponse(data, status=200)
     else:
         raise Http404 
@@ -416,7 +418,7 @@ def transaction_po_send_mail(request, *args, **kwargs):
                     subject,
                     plain_message,
                     from_email,
-                    [recipient,],
+                    [recipient,from_email,'marcosgabrhieljacob@gmail.com','cdeocampo103@gmail.com'],
                     html_message=html_message,
                 ) 
                 data['is_valid'] = True 

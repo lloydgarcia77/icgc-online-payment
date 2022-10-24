@@ -2,3 +2,61 @@ WARNING 2022-09-20 18:58:09,022 log 13876 19108 Not Found: /favicon.ico
 WARNING 2022-09-20 18:58:09,023 basehttp 13876 19108 "GET /favicon.ico HTTP/1.1" 404 7294
 WARNING 2022-10-12 17:39:39,135 log 15728 19860 Not Found: /favicon.ico
 WARNING 2022-10-12 17:39:39,135 basehttp 15728 19860 "GET /favicon.ico HTTP/1.1" 404 7294
+WARNING 2022-10-24 18:26:48,672 log 1824 10300 Forbidden (CSRF token missing or incorrect.): /transactions/
+WARNING 2022-10-24 18:26:48,672 basehttp 1824 10300 "POST /transactions/ HTTP/1.1" 403 2519
+WARNING 2022-10-24 18:26:50,288 log 1824 24476 Forbidden (CSRF token missing or incorrect.): /transactions/
+WARNING 2022-10-24 18:26:50,290 basehttp 1824 24476 "POST /transactions/ HTTP/1.1" 403 2519
+WARNING 2022-10-24 18:29:42,602 log 1824 10300 Not Found: /transactions/null
+WARNING 2022-10-24 18:29:42,603 basehttp 1824 10300 "GET /transactions/null HTTP/1.1" 404 7312
+WARNING 2022-10-24 18:29:42,699 log 1824 10300 Not Found: /favicon.ico
+WARNING 2022-10-24 18:29:42,700 basehttp 1824 10300 "GET /favicon.ico HTTP/1.1" 404 7294
+ERROR 2022-10-24 18:45:24,175 log 18248 10412 Internal Server Error: /transactions-status/ed068284-9a0a-42fa-a74c-60d8519418c9/
+Traceback (most recent call last):
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py", line 375, in transaction_status
+    response = payment_gateway.check_transaction_status(transaction.charge_id)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py", line 59, in check_transaction_status
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\xendit\models\ewallet\ewallet.py", line 371, in get_ewallet_charge_status
+    raise XenditError(resp)
+xendit.xendit_error.XenditError: Charge request not found
+ERROR 2022-10-24 18:45:24,179 basehttp 18248 10412 "POST /transactions-status/ed068284-9a0a-42fa-a74c-60d8519418c9/ HTTP/1.1" 500 88640
+ERROR 2022-10-24 18:47:08,634 log 34504 8708 Internal Server Error: /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/
+Traceback (most recent call last):
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py", line 377, in transaction_status
+    response = payment_gateway.check_transaction_status(transaction.charge_id)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py", line 59, in check_transaction_status
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\xendit\models\ewallet\ewallet.py", line 371, in get_ewallet_charge_status
+    raise XenditError(resp)
+xendit.xendit_error.XenditError: Charge request not found
+ERROR 2022-10-24 18:47:08,636 basehttp 34504 8708 "POST /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/ HTTP/1.1" 500 88668
+ERROR 2022-10-24 18:47:47,428 log 14512 1536 Internal Server Error: /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/
+Traceback (most recent call last):
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py", line 377, in transaction_status
+    response = payment_gateway.check_transaction_status(transaction.charge_id)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py", line 59, in check_transaction_status
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\xendit\models\ewallet\ewallet.py", line 371, in get_ewallet_charge_status
+    raise XenditError(resp)
+xendit.xendit_error.XenditError: Charge request not found
+ERROR 2022-10-24 18:47:47,430 basehttp 14512 1536 "POST /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/ HTTP/1.1" 500 88697
+WARNING 2022-10-24 18:48:15,589 log 14512 1536 Not Found: /transactions/null
+WARNING 2022-10-24 18:48:15,590 basehttp 14512 1536 "GET /transactions/null HTTP/1.1" 404 7312

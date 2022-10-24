@@ -7,8 +7,7 @@ import requests
 
 
 xendit.api_key = settings.XENDIT_API_KEY_DEV_PRIVATE
-
- 
+# xendit.api_key = settings.XENDIT_API_KEY_PROD_PRIVATE 
 
 def create_payment(data, request):  
     

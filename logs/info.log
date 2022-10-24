@@ -1100,3 +1100,652 @@ INFO 2022-10-14 12:23:24,573 basehttp 13924 11180 "GET /static/plugins/bs-custom
 INFO 2022-10-14 12:23:24,578 basehttp 13924 16880 "GET /media/game/thumbnail/GarenaThumnail.jpg HTTP/1.1" 200 11771
 INFO 2022-10-14 12:23:24,581 basehttp 13924 24220 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
 INFO 2022-10-14 12:23:24,819 basehttp 13924 24220 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:19:10,553 autoreload 21564 27184 Watching for file changes with StatReloader
+INFO 2022-10-24 18:21:23,907 autoreload 21564 27184 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py changed, reloading.
+INFO 2022-10-24 18:21:25,849 autoreload 1824 13088 Watching for file changes with StatReloader
+INFO 2022-10-24 18:23:42,800 views 1824 3228 TAE
+INFO 2022-10-24 18:23:42,830 basehttp 1824 3228 "GET / HTTP/1.1" 200 15139
+INFO 2022-10-24 18:23:42,882 basehttp 1824 18640 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:23:42,883 basehttp 1824 24476 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:23:42,884 basehttp 1824 9256 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:23:42,888 basehttp 1824 3228 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:23:42,889 basehttp 1824 10300 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:23:42,892 basehttp 1824 15536 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:23:42,892 basehttp 1824 18640 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:23:42,893 basehttp 1824 9256 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:23:42,894 basehttp 1824 24476 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:23:42,897 basehttp 1824 3228 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:23:42,899 basehttp 1824 18640 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:23:42,901 basehttp 1824 15536 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:23:42,903 basehttp 1824 3228 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:23:42,904 basehttp 1824 18640 "GET /static/css/index.css HTTP/1.1" 200 1377
+INFO 2022-10-24 18:23:42,904 basehttp 1824 24476 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:23:42,911 basehttp 1824 24476 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:23:42,915 basehttp 1824 15536 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:23:42,918 basehttp 1824 18640 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:23:42,922 basehttp 1824 15536 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:23:42,926 basehttp 1824 24476 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:23:42,927 basehttp 1824 10300 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:23:42,929 basehttp 1824 18640 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:23:42,931 basehttp 1824 15536 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:23:42,932 basehttp 1824 3228 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:23:42,939 basehttp 1824 24476 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:23:42,941 basehttp 1824 3228 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:23:42,942 basehttp 1824 18640 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:23:42,949 basehttp 1824 3228 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:23:42,949 basehttp 1824 15536 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:23:42,953 basehttp 1824 10300 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:23:42,955 basehttp 1824 18640 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:23:42,955 basehttp 1824 24476 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:23:42,961 basehttp 1824 3228 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:23:42,961 basehttp 1824 10300 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:23:42,961 basehttp 1824 18640 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:23:42,962 basehttp 1824 24476 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:23:42,967 basehttp 1824 3228 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:23:42,968 basehttp 1824 24476 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:23:42,969 basehttp 1824 15536 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:23:42,969 basehttp 1824 18640 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:23:42,972 basehttp 1824 10300 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:23:42,978 basehttp 1824 24476 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:23:42,982 basehttp 1824 15536 "GET /media/game/thumbnail/FFThumbnail.jpg HTTP/1.1" 200 126089
+INFO 2022-10-24 18:23:42,985 basehttp 1824 3228 "GET /media/game/thumbnail/ValorantThumbnail.jpg HTTP/1.1" 200 208063
+INFO 2022-10-24 18:23:42,987 basehttp 1824 15536 "GET /media/game/thumbnail/GarenaThumnail.jpg HTTP/1.1" 200 11771
+INFO 2022-10-24 18:23:42,987 basehttp 1824 24476 "GET /media/game/thumbnail/AOVThumnail.jpg HTTP/1.1" 200 128712
+INFO 2022-10-24 18:23:42,990 basehttp 1824 18640 "GET /media/game/thumbnail/LORThumbnail.jpg HTTP/1.1" 200 226454
+INFO 2022-10-24 18:23:42,993 basehttp 1824 18640 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:23:42,994 basehttp 1824 24476 "GET /media/game/thumbnail/CODThumnail.jpg HTTP/1.1" 200 24829
+INFO 2022-10-24 18:23:42,995 basehttp 1824 3228 "GET /media/game/thumbnail/LOLThumbnail.jpg HTTP/1.1" 200 67256
+INFO 2022-10-24 18:23:42,995 basehttp 1824 15536 "GET /media/game/thumbnail/CFThumbnail.jpg HTTP/1.1" 200 104172
+INFO 2022-10-24 18:23:42,997 basehttp 1824 24476 "GET /static/js/index.js HTTP/1.1" 200 1928
+INFO 2022-10-24 18:23:43,000 basehttp 1824 9256 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:23:43,014 basehttp 1824 10300 "GET /media/game/thumbnail/FTFUThumbnail.jpg HTTP/1.1" 200 1195570
+INFO 2022-10-24 18:23:43,108 basehttp 1824 9256 "GET /static/plugins/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 76736
+INFO 2022-10-24 18:23:43,110 basehttp 1824 24476 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:23:43,375 basehttp 1824 10300 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:23:45,253 basehttp 1824 10300 "GET /login/ HTTP/1.1" 200 12943
+INFO 2022-10-24 18:23:48,757 basehttp 1824 10300 "POST /login/ HTTP/1.1" 200 13250
+INFO 2022-10-24 18:23:55,956 basehttp 1824 10300 "POST /login/ HTTP/1.1" 200 13208
+INFO 2022-10-24 18:24:01,010 basehttp 1824 10300 "POST /login/ HTTP/1.1" 200 13250
+INFO 2022-10-24 18:24:11,593 basehttp 1824 10300 "POST /login/ HTTP/1.1" 200 13208
+INFO 2022-10-24 18:24:18,904 basehttp 1824 10300 "POST /login/ HTTP/1.1" 200 13208
+INFO 2022-10-24 18:24:25,795 basehttp 1824 10300 "POST /login/ HTTP/1.1" 302 0
+INFO 2022-10-24 18:24:25,798 views 1824 10300 TAE
+INFO 2022-10-24 18:24:25,818 basehttp 1824 10300 "GET / HTTP/1.1" 200 16802
+INFO 2022-10-24 18:24:29,175 basehttp 1824 10300 "GET /transactions/ HTTP/1.1" 200 34951
+INFO 2022-10-24 18:24:29,190 basehttp 1824 10300 "GET /static/qrcodejs-master/qrcode.min.js HTTP/1.1" 200 19927
+INFO 2022-10-24 18:24:29,191 basehttp 1824 24476 "GET /static/js/transactions.js HTTP/1.1" 200 21582
+INFO 2022-10-24 18:25:41,946 views 1824 24476 TAE
+INFO 2022-10-24 18:25:41,961 basehttp 1824 24476 "GET / HTTP/1.1" 200 16802
+INFO 2022-10-24 18:25:43,576 basehttp 1824 24476 "GET /game-item/valorant/ HTTP/1.1" 200 22949
+INFO 2022-10-24 18:25:43,592 basehttp 1824 24476 "GET /static/css/game_item.css HTTP/1.1" 200 2372
+INFO 2022-10-24 18:25:43,593 basehttp 1824 10300 "GET /media/game/wallpaper/ValorantWallpaper.jpg HTTP/1.1" 200 72213
+INFO 2022-10-24 18:25:43,602 basehttp 1824 3228 "GET /media/game/payment_method/shopeepay.png HTTP/1.1" 200 5075
+INFO 2022-10-24 18:25:43,602 basehttp 1824 15536 "GET /static/js/game_item/game_item.js HTTP/1.1" 200 8233
+INFO 2022-10-24 18:25:43,603 basehttp 1824 9256 "GET /media/game/payment_method/paymaya.png HTTP/1.1" 200 45001
+INFO 2022-10-24 18:25:43,603 basehttp 1824 24476 "GET /media/game/payment_method/grabpay.png HTTP/1.1" 200 29259
+INFO 2022-10-24 18:25:43,604 basehttp 1824 10300 "GET /media/game/payment_method/gcash.png HTTP/1.1" 200 138038
+INFO 2022-10-24 18:25:52,755 basehttp 1824 10300 "POST /game-item/valorant/payment-method/8d315165-eb1b-46c0-8ca8-3ae5a255d17d/ HTTP/1.1" 200 71
+INFO 2022-10-24 18:25:55,537 basehttp 1824 10300 "POST /game-item/valorant/e12218e1-f4ad-4c42-aa14-9327033471ae/ HTTP/1.1" 200 74
+INFO 2022-10-24 18:26:29,731 basehttp 1824 10300 "POST /game-item/valorant/ HTTP/1.1" 200 18
+INFO 2022-10-24 18:26:31,023 views 1824 10300 TAE
+INFO 2022-10-24 18:26:31,048 basehttp 1824 10300 "GET / HTTP/1.1" 200 16802
+INFO 2022-10-24 18:26:41,475 basehttp 1824 10300 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:26:47,580 basehttp 1824 10300 "POST /transactions/ HTTP/1.1" 200 133
+WARNING 2022-10-24 18:26:48,672 log 1824 10300 Forbidden (CSRF token missing or incorrect.): /transactions/
+WARNING 2022-10-24 18:26:48,672 basehttp 1824 10300 "POST /transactions/ HTTP/1.1" 403 2519
+WARNING 2022-10-24 18:26:50,288 log 1824 24476 Forbidden (CSRF token missing or incorrect.): /transactions/
+WARNING 2022-10-24 18:26:50,290 basehttp 1824 24476 "POST /transactions/ HTTP/1.1" 403 2519
+INFO 2022-10-24 18:26:50,308 basehttp 1824 10300 "POST /transactions/ HTTP/1.1" 200 21064
+INFO 2022-10-24 18:26:53,562 basehttp 1824 10300 "POST /transactions/ HTTP/1.1" 200 24586
+INFO 2022-10-24 18:27:01,302 basehttp 1824 10300 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+WARNING 2022-10-24 18:29:42,602 log 1824 10300 Not Found: /transactions/null
+WARNING 2022-10-24 18:29:42,603 basehttp 1824 10300 "GET /transactions/null HTTP/1.1" 404 7312
+WARNING 2022-10-24 18:29:42,699 log 1824 10300 Not Found: /favicon.ico
+WARNING 2022-10-24 18:29:42,700 basehttp 1824 10300 "GET /favicon.ico HTTP/1.1" 404 7294
+INFO 2022-10-24 18:32:15,410 basehttp 1824 10300 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:32:48,801 basehttp 1824 10300 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+INFO 2022-10-24 18:32:52,079 basehttp 1824 10300 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:32:52,090 basehttp 1824 25344 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:32:52,091 basehttp 1824 32960 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:32:52,092 basehttp 1824 17244 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:32:52,093 basehttp 1824 21744 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:32:52,096 basehttp 1824 10300 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:32:52,168 basehttp 1824 10300 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:32:52,169 basehttp 1824 21744 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:32:52,872 basehttp 1824 17244 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:33:17,135 autoreload 1824 13088 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:33:19,066 autoreload 16680 20420 Watching for file changes with StatReloader
+INFO 2022-10-24 18:33:20,264 basehttp 16680 31812 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:33:20,287 basehttp 16680 31812 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:33:20,310 basehttp 16680 31812 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:33:20,319 basehttp 16680 30760 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:33:20,320 basehttp 16680 31612 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:33:20,320 basehttp 16680 27060 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:33:20,325 basehttp 16680 31812 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:33:20,327 basehttp 16680 23968 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:33:20,331 basehttp 16680 10616 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:33:20,336 basehttp 16680 27060 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:33:20,336 basehttp 16680 30760 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:33:20,337 basehttp 16680 31612 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:33:20,337 basehttp 16680 31812 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:33:20,347 basehttp 16680 10616 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:33:20,350 basehttp 16680 27060 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:33:20,359 basehttp 16680 10616 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:33:20,360 basehttp 16680 31812 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:33:20,361 basehttp 16680 27060 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:33:20,364 basehttp 16680 31612 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:33:20,374 basehttp 16680 30760 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:33:20,375 basehttp 16680 27060 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:33:20,378 basehttp 16680 10616 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:33:20,387 basehttp 16680 31812 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:33:20,389 basehttp 16680 31612 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:33:20,391 basehttp 16680 30760 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:33:20,394 basehttp 16680 10616 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:33:20,406 basehttp 16680 27060 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:33:20,406 basehttp 16680 30760 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:33:20,407 basehttp 16680 31812 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:33:20,410 basehttp 16680 31612 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:33:20,410 basehttp 16680 10616 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:33:20,425 basehttp 16680 31812 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:33:20,425 basehttp 16680 31612 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:33:20,426 basehttp 16680 10616 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:33:20,428 basehttp 16680 27060 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:33:20,429 basehttp 16680 30760 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:33:20,437 basehttp 16680 10616 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:33:20,439 basehttp 16680 27060 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:33:20,441 basehttp 16680 31812 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:33:20,443 basehttp 16680 30760 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:33:20,445 basehttp 16680 10616 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:33:20,450 basehttp 16680 31612 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:33:20,453 basehttp 16680 31812 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:33:20,454 basehttp 16680 27060 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:33:20,455 basehttp 16680 10616 "GET /static/js/transactions.js HTTP/1.1" 200 21582
+INFO 2022-10-24 18:33:20,456 basehttp 16680 30760 "GET /static/qrcodejs-master/qrcode.min.js HTTP/1.1" 200 19927
+INFO 2022-10-24 18:33:20,458 basehttp 16680 23968 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:33:20,475 basehttp 16680 23968 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:33:20,476 basehttp 16680 30760 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:33:20,622 basehttp 16680 30760 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:33:20,887 basehttp 16680 27060 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:33:20,888 basehttp 16680 31812 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:33:20,890 basehttp 16680 31612 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:33:20,892 basehttp 16680 23968 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:33:20,896 basehttp 16680 30760 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:33:20,897 basehttp 16680 10616 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:33:20,945 basehttp 16680 10616 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:33:25,940 basehttp 16680 10616 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+INFO 2022-10-24 18:33:31,696 autoreload 16680 20420 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:33:33,191 autoreload 33692 33796 Watching for file changes with StatReloader
+INFO 2022-10-24 18:35:55,422 basehttp 33692 21164 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:35:55,440 basehttp 33692 21164 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:35:55,446 basehttp 33692 33076 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:35:55,452 basehttp 33692 30452 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:35:55,460 basehttp 33692 21164 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:35:55,460 basehttp 33692 19104 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:35:55,460 basehttp 33692 17724 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:35:55,461 basehttp 33692 30452 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:35:55,462 basehttp 33692 25256 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:35:55,464 basehttp 33692 33076 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:35:55,472 basehttp 33692 17724 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:35:55,473 basehttp 33692 25256 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:35:55,477 basehttp 33692 19104 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:35:55,477 basehttp 33692 33076 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:35:55,480 basehttp 33692 30452 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:35:55,492 basehttp 33692 30452 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:35:55,493 basehttp 33692 19104 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:35:55,495 basehttp 33692 33076 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:35:55,495 basehttp 33692 17724 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:35:55,503 basehttp 33692 19104 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:35:55,504 basehttp 33692 33076 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:35:55,509 basehttp 33692 30452 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:35:55,513 basehttp 33692 17724 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:35:55,514 basehttp 33692 30452 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:35:55,516 basehttp 33692 25256 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:35:55,520 basehttp 33692 33076 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:35:55,524 basehttp 33692 17724 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:35:55,525 basehttp 33692 30452 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:35:55,526 basehttp 33692 25256 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:35:55,534 basehttp 33692 19104 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:35:55,535 basehttp 33692 33076 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:35:55,541 basehttp 33692 30452 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:35:55,543 basehttp 33692 17724 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:35:55,547 basehttp 33692 25256 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:35:55,554 basehttp 33692 19104 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:35:55,554 basehttp 33692 30452 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:35:55,556 basehttp 33692 33076 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:35:55,560 basehttp 33692 25256 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:35:55,566 basehttp 33692 19104 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:35:55,568 basehttp 33692 30452 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:35:55,568 basehttp 33692 33076 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:35:55,568 basehttp 33692 25256 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:35:55,569 basehttp 33692 17724 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:35:55,577 basehttp 33692 33076 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:35:55,579 basehttp 33692 17724 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:35:55,581 basehttp 33692 30452 "GET /static/qrcodejs-master/qrcode.min.js HTTP/1.1" 200 19927
+INFO 2022-10-24 18:35:55,581 basehttp 33692 19104 "GET /static/js/transactions.js HTTP/1.1" 200 21582
+INFO 2022-10-24 18:35:55,582 basehttp 33692 25256 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:35:55,591 basehttp 33692 21164 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:35:55,806 basehttp 33692 21164 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:35:56,000 basehttp 33692 30452 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:35:56,000 basehttp 33692 17724 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:35:56,003 basehttp 33692 33076 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:35:56,005 basehttp 33692 25256 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:35:56,008 basehttp 33692 19104 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:35:56,009 basehttp 33692 21164 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:35:56,053 basehttp 33692 21164 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:35:59,184 basehttp 33692 21164 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:35:59,204 basehttp 33692 25256 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:35:59,207 basehttp 33692 17724 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:35:59,207 basehttp 33692 19104 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:35:59,208 basehttp 33692 33076 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:35:59,209 basehttp 33692 30452 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:35:59,214 basehttp 33692 21164 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:35:59,215 basehttp 33692 25256 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:35:59,221 basehttp 33692 33076 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:35:59,222 basehttp 33692 30452 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:35:59,222 basehttp 33692 17724 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:35:59,222 basehttp 33692 19104 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:35:59,226 basehttp 33692 21164 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:35:59,234 basehttp 33692 17724 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:35:59,237 basehttp 33692 30452 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:35:59,243 basehttp 33692 33076 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:35:59,244 basehttp 33692 21164 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:35:59,249 basehttp 33692 33076 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:35:59,251 basehttp 33692 17724 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:35:59,256 basehttp 33692 30452 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:35:59,260 basehttp 33692 17724 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:35:59,263 basehttp 33692 21164 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:35:59,264 basehttp 33692 30452 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:35:59,268 basehttp 33692 19104 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:35:59,271 basehttp 33692 17724 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:35:59,272 basehttp 33692 33076 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:35:59,274 basehttp 33692 30452 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:35:59,281 basehttp 33692 17724 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:35:59,282 basehttp 33692 21164 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:35:59,284 basehttp 33692 33076 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:35:59,288 basehttp 33692 30452 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:35:59,294 basehttp 33692 30452 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:35:59,295 basehttp 33692 19104 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:35:59,298 basehttp 33692 33076 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:35:59,300 basehttp 33692 21164 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:35:59,304 basehttp 33692 17724 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:35:59,305 basehttp 33692 30452 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:35:59,310 basehttp 33692 21164 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:35:59,310 basehttp 33692 33076 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:35:59,315 basehttp 33692 17724 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:35:59,320 basehttp 33692 30452 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:35:59,320 basehttp 33692 21164 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:35:59,322 basehttp 33692 33076 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:35:59,323 basehttp 33692 17724 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:35:59,324 basehttp 33692 19104 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:35:59,327 basehttp 33692 30452 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:35:59,328 basehttp 33692 21164 "GET /static/qrcodejs-master/qrcode.min.js HTTP/1.1" 200 19927
+INFO 2022-10-24 18:35:59,329 basehttp 33692 17724 "GET /static/js/transactions.js HTTP/1.1" 200 21582
+INFO 2022-10-24 18:35:59,337 basehttp 33692 25256 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:35:59,477 basehttp 33692 25256 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:35:59,621 basehttp 33692 19104 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:35:59,621 basehttp 33692 30452 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:35:59,623 basehttp 33692 33076 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:35:59,624 basehttp 33692 17724 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:35:59,626 basehttp 33692 21164 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:35:59,628 basehttp 33692 25256 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:35:59,801 basehttp 33692 25256 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:36:07,205 basehttp 33692 25256 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+INFO 2022-10-24 18:36:38,922 autoreload 33692 33796 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:36:40,641 autoreload 14596 25280 Watching for file changes with StatReloader
+INFO 2022-10-24 18:36:41,443 basehttp 14596 3828 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:36:41,465 basehttp 14596 21064 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:36:41,467 basehttp 14596 12608 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:36:41,468 basehttp 14596 24592 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:36:41,468 basehttp 14596 25528 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:36:41,468 basehttp 14596 5280 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:36:41,469 basehttp 14596 3828 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:36:41,469 basehttp 14596 21064 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:36:41,476 basehttp 14596 25528 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:36:41,477 basehttp 14596 3828 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:36:41,478 basehttp 14596 12608 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:36:41,480 basehttp 14596 5280 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:36:41,482 basehttp 14596 24592 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:36:41,487 basehttp 14596 3828 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:36:41,489 basehttp 14596 25528 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:36:41,495 basehttp 14596 12608 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:36:41,499 basehttp 14596 24592 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:36:41,500 basehttp 14596 12608 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:36:41,500 basehttp 14596 25528 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:36:41,501 basehttp 14596 3828 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:36:41,509 basehttp 14596 25528 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:36:41,513 basehttp 14596 3828 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:36:41,515 basehttp 14596 5280 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:36:41,515 basehttp 14596 24592 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:36:41,517 basehttp 14596 25528 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:36:41,522 basehttp 14596 12608 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:36:41,523 basehttp 14596 3828 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:36:41,527 basehttp 14596 25528 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:36:41,528 basehttp 14596 24592 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:36:41,530 basehttp 14596 5280 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:36:41,534 basehttp 14596 25528 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:36:41,534 basehttp 14596 3828 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:36:41,536 basehttp 14596 24592 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:36:41,537 basehttp 14596 5280 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:36:41,541 basehttp 14596 12608 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:36:41,545 basehttp 14596 25528 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:36:41,546 basehttp 14596 3828 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:36:41,550 basehttp 14596 24592 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:36:41,550 basehttp 14596 12608 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:36:41,555 basehttp 14596 25528 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:36:41,556 basehttp 14596 3828 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:36:41,557 basehttp 14596 24592 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:36:41,557 basehttp 14596 12608 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:36:41,562 basehttp 14596 5280 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:36:41,563 basehttp 14596 24592 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:36:41,563 basehttp 14596 3828 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:36:41,564 basehttp 14596 12608 "GET /static/qrcodejs-master/qrcode.min.js HTTP/1.1" 200 19927
+INFO 2022-10-24 18:36:41,565 basehttp 14596 25528 "GET /static/js/transactions.js HTTP/1.1" 200 21582
+INFO 2022-10-24 18:36:41,571 basehttp 14596 21064 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:36:41,692 basehttp 14596 21064 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:36:41,899 basehttp 14596 21064 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:36:41,907 basehttp 14596 3828 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:36:41,907 basehttp 14596 12608 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:36:41,908 basehttp 14596 24592 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:36:41,910 basehttp 14596 25528 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:36:41,912 basehttp 14596 21064 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:36:41,959 basehttp 14596 21064 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:36:48,155 basehttp 14596 21064 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+INFO 2022-10-24 18:36:58,546 autoreload 14596 25280 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:37:00,186 autoreload 23224 18056 Watching for file changes with StatReloader
+INFO 2022-10-24 18:37:05,193 basehttp 23224 28032 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+INFO 2022-10-24 18:37:47,131 basehttp 23224 28032 "GET /transactions/ HTTP/1.1" 200 38275
+INFO 2022-10-24 18:37:47,152 basehttp 23224 28032 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:37:47,162 basehttp 23224 27084 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:37:47,166 basehttp 23224 20988 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:37:47,166 basehttp 23224 28032 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:37:47,167 basehttp 23224 26916 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:37:47,169 basehttp 23224 24176 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:37:47,172 basehttp 23224 18488 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:37:47,173 basehttp 23224 27084 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:37:47,180 basehttp 23224 20988 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:37:47,180 basehttp 23224 24176 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:37:47,180 basehttp 23224 26916 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:37:47,181 basehttp 23224 28032 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:37:47,183 basehttp 23224 18488 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:37:47,191 basehttp 23224 20988 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:37:47,194 basehttp 23224 26916 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:37:47,201 basehttp 23224 28032 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:37:47,201 basehttp 23224 24176 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:37:47,211 basehttp 23224 26916 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:37:47,212 basehttp 23224 20988 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:37:47,213 basehttp 23224 24176 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:37:47,216 basehttp 23224 28032 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:37:47,222 basehttp 23224 18488 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:37:47,229 basehttp 23224 20988 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:37:47,230 basehttp 23224 28032 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:37:47,231 basehttp 23224 18488 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:37:47,234 basehttp 23224 24176 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:37:47,242 basehttp 23224 20988 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:37:47,243 basehttp 23224 28032 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:37:47,249 basehttp 23224 26916 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:37:47,250 basehttp 23224 18488 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:37:47,252 basehttp 23224 24176 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:37:47,257 basehttp 23224 20988 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:37:47,260 basehttp 23224 28032 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:37:47,263 basehttp 23224 26916 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:37:47,263 basehttp 23224 24176 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:37:47,270 basehttp 23224 28032 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:37:47,276 basehttp 23224 26916 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:37:47,280 basehttp 23224 24176 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:37:47,281 basehttp 23224 18488 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:37:47,285 basehttp 23224 28032 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:37:47,292 basehttp 23224 26916 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:37:47,296 basehttp 23224 20988 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:37:47,297 basehttp 23224 18488 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:37:47,298 basehttp 23224 28032 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:37:47,301 basehttp 23224 24176 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:37:47,302 basehttp 23224 26916 "GET /static/qrcodejs-master/qrcode.min.js HTTP/1.1" 200 19927
+INFO 2022-10-24 18:37:47,303 basehttp 23224 18488 "GET /static/js/transactions.js HTTP/1.1" 200 21587
+INFO 2022-10-24 18:37:47,310 basehttp 23224 27084 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:37:47,495 basehttp 23224 27084 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:37:47,631 basehttp 23224 27084 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:37:47,642 basehttp 23224 24176 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:37:47,642 basehttp 23224 26916 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:37:47,644 basehttp 23224 28032 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:37:47,645 basehttp 23224 27084 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:37:47,648 basehttp 23224 18488 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:37:47,886 basehttp 23224 18488 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:37:54,711 basehttp 23224 18488 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2621
+INFO 2022-10-24 18:40:06,612 views 23224 18488 TAE
+INFO 2022-10-24 18:40:06,632 basehttp 23224 18488 "GET / HTTP/1.1" 200 16802
+INFO 2022-10-24 18:40:06,678 basehttp 23224 24176 "GET /static/plugins/daterangepicker/daterangepicker.css HTTP/1.1" 200 8069
+INFO 2022-10-24 18:40:06,679 basehttp 23224 28032 "GET /static/plugins/iCheck/square/blue.css HTTP/1.1" 200 1672
+INFO 2022-10-24 18:40:06,679 basehttp 23224 26916 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css HTTP/1.1" 200 9495
+INFO 2022-10-24 18:40:06,680 basehttp 23224 20988 "GET /static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css HTTP/1.1" 200 11967
+INFO 2022-10-24 18:40:06,681 basehttp 23224 27084 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 20020
+INFO 2022-10-24 18:40:06,682 basehttp 23224 18488 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 59305
+INFO 2022-10-24 18:40:06,694 basehttp 23224 26916 "GET /static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css HTTP/1.1" 200 1552
+INFO 2022-10-24 18:40:06,695 basehttp 23224 28032 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css HTTP/1.1" 200 3231
+INFO 2022-10-24 18:40:06,695 basehttp 23224 27084 "GET /static/plugins/select2/css/select2.min.css HTTP/1.1" 200 14966
+INFO 2022-10-24 18:40:06,697 basehttp 23224 18488 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2022-10-24 18:40:06,700 basehttp 23224 24176 "GET /static/plugins/dropzone/min/dropzone.min.css HTTP/1.1" 200 9830
+INFO 2022-10-24 18:40:06,701 basehttp 23224 20988 "GET /static/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css HTTP/1.1" 200 6705
+INFO 2022-10-24 18:40:06,710 basehttp 23224 28032 "GET /static/css/base.css HTTP/1.1" 200 3278
+INFO 2022-10-24 18:40:06,712 basehttp 23224 18488 "GET /static/css/index.css HTTP/1.1" 200 1377
+INFO 2022-10-24 18:40:06,713 basehttp 23224 27084 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.css HTTP/1.1" 200 24273
+INFO 2022-10-24 18:40:06,723 basehttp 23224 24176 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 89501
+INFO 2022-10-24 18:40:06,725 basehttp 23224 27084 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 83253
+INFO 2022-10-24 18:40:06,726 basehttp 23224 28032 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2022-10-24 18:40:06,727 basehttp 23224 18488 "GET /static/plugins/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 76736
+INFO 2022-10-24 18:40:06,739 basehttp 23224 24176 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42602
+INFO 2022-10-24 18:40:06,742 basehttp 23224 28032 "GET /static/images/icgc_logo.jpg HTTP/1.1" 200 23852
+INFO 2022-10-24 18:40:06,742 basehttp 23224 20988 "GET /static/plugins/jquery-ui/jquery-ui.min.js HTTP/1.1" 200 254921
+INFO 2022-10-24 18:40:06,751 basehttp 23224 24176 "GET /media/game/thumbnail/GarenaThumnail.jpg HTTP/1.1" 200 11771
+INFO 2022-10-24 18:40:06,754 basehttp 23224 27084 "GET /media/game/thumbnail/LOLThumbnail.jpg HTTP/1.1" 200 67256
+INFO 2022-10-24 18:40:06,760 basehttp 23224 18488 "GET /media/game/thumbnail/AOVThumnail.jpg HTTP/1.1" 200 128712
+INFO 2022-10-24 18:40:06,765 basehttp 23224 18488 "GET /static/plugins/bs-stepper/css/bs-stepper.min.css.map HTTP/1.1" 200 9596
+INFO 2022-10-24 18:40:06,770 basehttp 23224 28032 "GET /media/game/thumbnail/ValorantThumbnail.jpg HTTP/1.1" 200 208063
+INFO 2022-10-24 18:40:06,771 basehttp 23224 24176 "GET /media/game/thumbnail/FFThumbnail.jpg HTTP/1.1" 200 126089
+INFO 2022-10-24 18:40:06,777 basehttp 23224 20988 "GET /media/game/thumbnail/LORThumbnail.jpg HTTP/1.1" 200 226454
+INFO 2022-10-24 18:40:06,778 basehttp 23224 28032 "GET /static/plugins/jquery-mousewheel/jquery.mousewheel.js HTTP/1.1" 200 8267
+INFO 2022-10-24 18:40:06,780 basehttp 23224 18488 "GET /static/plugins/select2/js/select2.full.min.js HTTP/1.1" 200 79172
+INFO 2022-10-24 18:40:06,790 basehttp 23224 20988 "GET /media/game/thumbnail/CODThumnail.jpg HTTP/1.1" 200 24829
+INFO 2022-10-24 18:40:06,791 basehttp 23224 18488 "GET /static/plugins/jquery-mapael/jquery.mapael.min.js HTTP/1.1" 200 35973
+INFO 2022-10-24 18:40:06,791 basehttp 23224 24176 "GET /static/plugins/raphael/raphael.min.js HTTP/1.1" 200 93167
+INFO 2022-10-24 18:40:06,800 basehttp 23224 24176 "GET /static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js HTTP/1.1" 200 16859
+INFO 2022-10-24 18:40:06,809 basehttp 23224 18488 "GET /static/plugins/chart.js/Chart.min.js HTTP/1.1" 200 173077
+INFO 2022-10-24 18:40:06,811 basehttp 23224 24176 "GET /static/plugins/moment/moment.min.js HTTP/1.1" 200 58862
+INFO 2022-10-24 18:40:06,817 basehttp 23224 28032 "GET /media/game/thumbnail/CFThumbnail.jpg HTTP/1.1" 200 104172
+INFO 2022-10-24 18:40:06,822 basehttp 23224 20988 "GET /static/plugins/jquery-mapael/maps/usa_states.min.js HTTP/1.1" 200 60834
+INFO 2022-10-24 18:40:06,825 basehttp 23224 24176 "GET /static/plugins/daterangepicker/daterangepicker.js HTTP/1.1" 200 67842
+INFO 2022-10-24 18:40:06,827 basehttp 23224 18488 "GET /static/plugins/inputmask/jquery.inputmask.min.js HTTP/1.1" 200 99426
+INFO 2022-10-24 18:40:06,833 basehttp 23224 28032 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js HTTP/1.1" 200 98019
+INFO 2022-10-24 18:40:06,835 basehttp 23224 24176 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js HTTP/1.1" 200 6226
+INFO 2022-10-24 18:40:06,837 basehttp 23224 18488 "GET /static/plugins/bootstrap-switch/js/bootstrap-switch.min.js HTTP/1.1" 200 14920
+INFO 2022-10-24 18:40:06,843 basehttp 23224 20988 "GET /static/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js HTTP/1.1" 200 61588
+INFO 2022-10-24 18:40:06,847 basehttp 23224 18488 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js HTTP/1.1" 200 2338
+INFO 2022-10-24 18:40:06,848 basehttp 23224 24176 "GET /static/plugins/iCheck/icheck.min.js HTTP/1.1" 200 4526
+INFO 2022-10-24 18:40:06,850 basehttp 23224 20988 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2022-10-24 18:40:06,852 basehttp 23224 28032 "GET /static/plugins/dropzone/min/dropzone.min.js HTTP/1.1" 200 114702
+INFO 2022-10-24 18:40:06,866 basehttp 23224 18488 "GET /static/js/base.js HTTP/1.1" 200 317
+INFO 2022-10-24 18:40:06,867 basehttp 23224 24176 "GET /static/plugins/jquery-validation/additional-methods.min.js HTTP/1.1" 200 22659
+INFO 2022-10-24 18:40:06,868 basehttp 23224 20988 "GET /static/plugins/jquery-validation/jquery.validate.min.js HTTP/1.1" 200 24430
+INFO 2022-10-24 18:40:06,874 basehttp 23224 28032 "GET /static/sweetalert2-11.3.5/package/dist/sweetalert2.min.js HTTP/1.1" 200 43070
+INFO 2022-10-24 18:40:06,875 basehttp 23224 20988 "GET /static/js/index.js HTTP/1.1" 200 1928
+INFO 2022-10-24 18:40:06,877 basehttp 23224 24176 "GET /static/js/micelleneous/getcookies.js HTTP/1.1" 200 439
+INFO 2022-10-24 18:40:06,878 basehttp 23224 18488 "GET /static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map HTTP/1.1" 200 27136
+INFO 2022-10-24 18:40:06,880 basehttp 23224 26916 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 1396747
+INFO 2022-10-24 18:40:06,883 basehttp 23224 27084 "GET /media/game/thumbnail/FTFUThumbnail.jpg HTTP/1.1" 200 1195570
+INFO 2022-10-24 18:40:07,013 basehttp 23224 27084 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 3846965
+INFO 2022-10-24 18:40:07,276 basehttp 23224 18488 "GET /static/plugins/bs-stepper/js/bs-stepper.min.js.map HTTP/1.1" 200 18729
+INFO 2022-10-24 18:40:07,279 basehttp 23224 26916 "GET /static/plugins/moment/moment.min.js.map HTTP/1.1" 200 86532
+INFO 2022-10-24 18:40:07,283 basehttp 23224 27084 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 311239
+INFO 2022-10-24 18:40:07,285 basehttp 23224 20988 "GET /static/plugins/bs-custom-file-input/bs-custom-file-input.min.js.map HTTP/1.1" 200 7435
+INFO 2022-10-24 18:40:07,286 basehttp 23224 28032 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2022-10-24 18:40:07,288 basehttp 23224 24176 "GET /static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map HTTP/1.1" 200 206925
+INFO 2022-10-24 18:40:07,294 basehttp 23224 18488 "GET /static/images/icgc_logo.ico HTTP/1.1" 200 432254
+INFO 2022-10-24 18:40:10,315 basehttp 23224 18488 "GET /admin/ HTTP/1.1" 200 4684
+INFO 2022-10-24 18:40:10,341 basehttp 23224 28032 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2022-10-24 18:40:10,342 basehttp 23224 24176 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+INFO 2022-10-24 18:40:10,343 basehttp 23224 18488 "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+INFO 2022-10-24 18:40:10,343 basehttp 23224 27084 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2022-10-24 18:40:10,344 basehttp 23224 20988 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2022-10-24 18:40:10,350 basehttp 23224 27084 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2022-10-24 18:40:10,362 basehttp 23224 20988 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2022-10-24 18:40:10,362 basehttp 23224 27084 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2022-10-24 18:40:10,365 basehttp 23224 18488 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2022-10-24 18:40:10,367 basehttp 23224 24176 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2022-10-24 18:40:10,367 basehttp 23224 28032 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2022-10-24 18:40:16,718 basehttp 23224 28032 "GET /admin/icgc_app/transaction/ HTTP/1.1" 200 18880
+INFO 2022-10-24 18:40:16,735 basehttp 23224 28032 "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+INFO 2022-10-24 18:40:16,735 basehttp 23224 24176 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+INFO 2022-10-24 18:40:16,739 basehttp 23224 18488 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6874
+INFO 2022-10-24 18:40:16,740 basehttp 23224 27084 "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+INFO 2022-10-24 18:40:16,748 basehttp 23224 24176 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2022-10-24 18:40:16,751 basehttp 23224 28032 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2022-10-24 18:40:16,751 basehttp 23224 18488 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2022-10-24 18:40:16,755 basehttp 23224 27084 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2022-10-24 18:40:16,757 basehttp 23224 20988 "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+INFO 2022-10-24 18:40:16,757 basehttp 23224 24176 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+INFO 2022-10-24 18:40:16,765 basehttp 23224 18488 "GET /static/admin/js/actions.js HTTP/1.1" 200 7867
+INFO 2022-10-24 18:40:16,767 basehttp 23224 27084 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2022-10-24 18:40:16,767 basehttp 23224 20988 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2022-10-24 18:40:16,769 basehttp 23224 28032 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+INFO 2022-10-24 18:40:16,772 basehttp 23224 26916 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2022-10-24 18:40:16,774 basehttp 23224 24176 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2022-10-24 18:40:16,780 basehttp 23224 24176 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2022-10-24 18:40:16,793 basehttp 23224 24176 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2022-10-24 18:40:16,808 basehttp 23224 24176 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2022-10-24 18:40:16,809 basehttp 23224 26916 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2022-10-24 18:40:16,810 basehttp 23224 28032 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2022-10-24 18:40:16,811 basehttp 23224 20988 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2022-10-24 18:40:16,812 basehttp 23224 27084 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2022-10-24 18:40:16,820 basehttp 23224 27084 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2022-10-24 18:40:31,295 basehttp 23224 27084 "GET /admin/icgc_app/transaction/312d2f77-3a70-4cf3-8ab1-39b0744092cc/change/ HTTP/1.1" 200 17361
+INFO 2022-10-24 18:40:31,307 basehttp 23224 27084 "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+INFO 2022-10-24 18:40:31,318 basehttp 23224 27084 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+INFO 2022-10-24 18:40:31,322 basehttp 23224 18488 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2022-10-24 18:40:31,323 basehttp 23224 24176 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2022-10-24 18:40:31,330 basehttp 23224 27084 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2022-10-24 18:40:31,331 basehttp 23224 20988 "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+INFO 2022-10-24 18:40:31,338 basehttp 23224 28032 "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+INFO 2022-10-24 18:40:31,339 basehttp 23224 18488 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+INFO 2022-10-24 18:40:31,340 basehttp 23224 27084 "GET /static/admin/js/actions.js HTTP/1.1" 200 7867
+INFO 2022-10-24 18:40:31,342 basehttp 23224 24176 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2022-10-24 18:40:31,346 basehttp 23224 20988 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2022-10-24 18:40:31,349 basehttp 23224 28032 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2022-10-24 18:40:31,352 basehttp 23224 18488 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+INFO 2022-10-24 18:40:31,357 basehttp 23224 26916 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2022-10-24 18:40:31,360 basehttp 23224 27084 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2022-10-24 18:40:31,370 basehttp 23224 27084 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2022-10-24 18:40:31,370 basehttp 23224 26916 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2022-10-24 18:40:31,396 basehttp 23224 26916 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2022-10-24 18:40:31,397 basehttp 23224 18488 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2022-10-24 18:40:31,398 basehttp 23224 27084 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2022-10-24 18:40:31,399 basehttp 23224 28032 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2022-10-24 18:40:31,402 basehttp 23224 20988 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2022-10-24 18:40:31,403 basehttp 23224 24176 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2022-10-24 18:40:31,404 basehttp 23224 26916 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2022-10-24 18:41:00,584 basehttp 23224 26916 "GET /admin/icgc_app/amount/ HTTP/1.1" 200 22465
+INFO 2022-10-24 18:41:00,599 basehttp 23224 26916 "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+INFO 2022-10-24 18:41:02,977 basehttp 23224 26916 "GET /admin/icgc_app/amount/0f3c1c89-8d88-4380-b10e-afc631fb00a0/change/ HTTP/1.1" 200 10796
+INFO 2022-10-24 18:41:02,992 basehttp 23224 26916 "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+INFO 2022-10-24 18:42:26,017 autoreload 23224 18056 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\models.py changed, reloading.
+INFO 2022-10-24 18:42:28,706 autoreload 30580 21772 Watching for file changes with StatReloader
+INFO 2022-10-24 18:42:33,741 basehttp 30580 33856 "GET /admin/icgc_app/transaction/ HTTP/1.1" 200 18962
+INFO 2022-10-24 18:42:33,758 basehttp 30580 33856 "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+INFO 2022-10-24 18:42:49,835 autoreload 30580 21772 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\models.py changed, reloading.
+INFO 2022-10-24 18:42:51,209 autoreload 18248 2548 Watching for file changes with StatReloader
+INFO 2022-10-24 18:44:05,672 views 18248 10412 TAE
+INFO 2022-10-24 18:44:05,694 basehttp 18248 10412 "GET / HTTP/1.1" 200 16802
+INFO 2022-10-24 18:44:08,228 basehttp 18248 10412 "GET /game-item/valorant/ HTTP/1.1" 200 22949
+INFO 2022-10-24 18:44:10,562 basehttp 18248 10412 "POST /game-item/valorant/payment-method/54cecabd-2ff5-4da6-b799-24b06aacedb1/ HTTP/1.1" 200 73
+INFO 2022-10-24 18:44:18,023 basehttp 18248 10412 "POST /game-item/valorant/e12218e1-f4ad-4c42-aa14-9327033471ae/ HTTP/1.1" 200 74
+INFO 2022-10-24 18:44:21,453 basehttp 18248 10412 "POST /game-item/valorant/ HTTP/1.1" 200 18
+INFO 2022-10-24 18:44:22,622 views 18248 10412 TAE
+INFO 2022-10-24 18:44:22,645 basehttp 18248 10412 "GET / HTTP/1.1" 200 16802
+INFO 2022-10-24 18:44:46,054 basehttp 18248 10412 "GET /transactions/ HTTP/1.1" 200 41601
+INFO 2022-10-24 18:44:46,082 basehttp 18248 10412 "GET /static/js/transactions.js HTTP/1.1" 304 0
+INFO 2022-10-24 18:44:53,274 basehttp 18248 10412 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2620
+ERROR 2022-10-24 18:45:24,175 log 18248 10412 Internal Server Error: /transactions-status/ed068284-9a0a-42fa-a74c-60d8519418c9/
+Traceback (most recent call last):
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py", line 375, in transaction_status
+    response = payment_gateway.check_transaction_status(transaction.charge_id)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py", line 59, in check_transaction_status
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\xendit\models\ewallet\ewallet.py", line 371, in get_ewallet_charge_status
+    raise XenditError(resp)
+xendit.xendit_error.XenditError: Charge request not found
+ERROR 2022-10-24 18:45:24,179 basehttp 18248 10412 "POST /transactions-status/ed068284-9a0a-42fa-a74c-60d8519418c9/ HTTP/1.1" 500 88640
+INFO 2022-10-24 18:46:57,134 autoreload 18248 2548 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:46:58,726 autoreload 29032 27908 Watching for file changes with StatReloader
+INFO 2022-10-24 18:47:00,538 autoreload 29032 27908 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:47:02,012 autoreload 34504 13976 Watching for file changes with StatReloader
+INFO 2022-10-24 18:47:02,913 basehttp 34504 8708 "GET /transactions/ HTTP/1.1" 200 41601
+INFO 2022-10-24 18:47:02,934 basehttp 34504 8708 "GET /static/js/transactions.js HTTP/1.1" 304 0
+ERROR 2022-10-24 18:47:08,634 log 34504 8708 Internal Server Error: /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/
+Traceback (most recent call last):
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py", line 377, in transaction_status
+    response = payment_gateway.check_transaction_status(transaction.charge_id)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py", line 59, in check_transaction_status
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\xendit\models\ewallet\ewallet.py", line 371, in get_ewallet_charge_status
+    raise XenditError(resp)
+xendit.xendit_error.XenditError: Charge request not found
+ERROR 2022-10-24 18:47:08,636 basehttp 34504 8708 "POST /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/ HTTP/1.1" 500 88668
+INFO 2022-10-24 18:47:33,631 autoreload 34504 13976 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:47:35,031 autoreload 14512 3324 Watching for file changes with StatReloader
+INFO 2022-10-24 18:47:40,718 basehttp 14512 1536 "GET /transactions/ HTTP/1.1" 200 41601
+ERROR 2022-10-24 18:47:47,428 log 14512 1536 Internal Server Error: /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/
+Traceback (most recent call last):
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py", line 377, in transaction_status
+    response = payment_gateway.check_transaction_status(transaction.charge_id)
+  File "D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py", line 59, in check_transaction_status
+    ewallet_charge = EWallet.get_ewallet_charge_status(
+  File "C:\Users\LloydQueen\Anaconda3\envs\py39slim\lib\site-packages\xendit\models\ewallet\ewallet.py", line 371, in get_ewallet_charge_status
+    raise XenditError(resp)
+xendit.xendit_error.XenditError: Charge request not found
+ERROR 2022-10-24 18:47:47,430 basehttp 14512 1536 "POST /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/ HTTP/1.1" 500 88697
+INFO 2022-10-24 18:48:11,247 basehttp 14512 1536 "POST /transactions-status/fb1de745-22c6-4fbc-9e4d-98e989be6e4c/ HTTP/1.1" 200 1834
+WARNING 2022-10-24 18:48:15,589 log 14512 1536 Not Found: /transactions/null
+WARNING 2022-10-24 18:48:15,590 basehttp 14512 1536 "GET /transactions/null HTTP/1.1" 404 7312
+INFO 2022-10-24 18:51:25,959 autoreload 14512 3324 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:51:27,400 autoreload 21252 26912 Watching for file changes with StatReloader
+INFO 2022-10-24 18:52:24,829 autoreload 21252 26912 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:52:26,254 autoreload 23192 32120 Watching for file changes with StatReloader
+INFO 2022-10-24 18:52:28,680 basehttp 23192 20068 "GET /transactions/ HTTP/1.1" 200 41601
+INFO 2022-10-24 18:52:28,707 basehttp 23192 20068 "GET /static/js/transactions.js HTTP/1.1" 200 21657
+INFO 2022-10-24 18:52:33,725 basehttp 23192 20068 "POST /transactions-status/310b59b2-9cd0-462b-a91d-d1e7fd4c4293/ HTTP/1.1" 200 63
+INFO 2022-10-24 18:52:47,215 basehttp 23192 20068 "POST /transactions-status/fb1de745-22c6-4fbc-9e4d-98e989be6e4c/ HTTP/1.1" 200 1834
+INFO 2022-10-24 18:54:36,341 autoreload 23192 32120 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:54:37,809 autoreload 33644 34480 Watching for file changes with StatReloader
+INFO 2022-10-24 18:56:04,779 basehttp 33644 3996 "GET /transactions/ HTTP/1.1" 200 41601
+INFO 2022-10-24 18:56:04,796 basehttp 33644 3996 "GET /static/js/transactions.js HTTP/1.1" 200 22024
+INFO 2022-10-24 18:56:10,279 basehttp 33644 3996 "POST /transactions-status/fb1de745-22c6-4fbc-9e4d-98e989be6e4c/ HTTP/1.1" 200 1834
+INFO 2022-10-24 18:56:26,170 basehttp 33644 3996 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2620
+INFO 2022-10-24 18:56:58,192 basehttp 33644 3996 "GET /transactions/ HTTP/1.1" 200 41601
+INFO 2022-10-24 18:56:58,230 basehttp 33644 3996 "GET /static/js/transactions.js HTTP/1.1" 200 21976
+INFO 2022-10-24 18:57:02,946 basehttp 33644 3996 "POST /transactions-status/fb1de745-22c6-4fbc-9e4d-98e989be6e4c/ HTTP/1.1" 200 1834
+INFO 2022-10-24 18:57:08,355 basehttp 33644 3996 "POST /transactions-status/d8b42ebc-ffa4-4232-8f1b-accd952cf3ec/ HTTP/1.1" 200 2620
+INFO 2022-10-24 18:57:17,740 basehttp 33644 3996 "POST /transactions-status/fb1de745-22c6-4fbc-9e4d-98e989be6e4c/ HTTP/1.1" 200 1834
+INFO 2022-10-24 18:59:33,057 autoreload 33644 34480 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:59:34,867 autoreload 24092 27124 Watching for file changes with StatReloader
+INFO 2022-10-24 18:59:42,228 autoreload 24092 27124 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 18:59:43,753 autoreload 28308 33616 Watching for file changes with StatReloader
+INFO 2022-10-24 19:00:05,677 autoreload 28308 33616 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\views.py changed, reloading.
+INFO 2022-10-24 19:00:07,518 autoreload 18056 26248 Watching for file changes with StatReloader
+INFO 2022-10-24 19:00:15,681 autoreload 18056 26248 D:\Django Projects\Ongoing Projects\ICareGameCredits\icaregamecredits\icgc_app\payment_gateway.py changed, reloading.
+INFO 2022-10-24 19:00:17,231 autoreload 24444 27764 Watching for file changes with StatReloader

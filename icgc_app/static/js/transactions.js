@@ -118,14 +118,18 @@ $(function () {
                                             <tbody>
                                             
                                                 <tr>
+                                                        ${
+                                                            response.actions.desktop_web_checkout_url ? `
+                                                        <td>
+                                                            <a href="${response.actions.desktop_web_checkout_url}" target="_blank" class="btn bg-gradient-success btn-block">
+                                                                <i class="fas fa-desktop mr-1"></i>
+                                                                Pay Desktop URL
+                                                            </a> 
+                                                        </td>
+                                                            `: `` 
+                                                        }
                                                     <td>
-                                                        <a href="${response.actions.desktop_web_checkout_url}" target="_blank" class="btn bg-gradient-success btn-block">
-                                                            <i class="fas fa-desktop mr-1"></i>
-                                                            Pay Desktop URL
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="${response.actions.mobile_web_checkout_url}" target="_blank" class="btn bg-gradient-primary btn-block">
+                                                        <a href="${response.actions.mobile_deeplink_checkout_url}" target="_blank" class="btn bg-gradient-primary btn-block">
                                                         <i class="fas fa-mobile-alt mr-1"></i>
                                                             Pay Mobile URL
                                                         </a>
@@ -153,6 +157,8 @@ $(function () {
                     // new QRCode(m.find("#qr_code_mobile")[0], { ...qrcode_settings, text: response.actions.desktop_web_checkout_url });
 
 
+                }else{
+                    toastr.error(data.error)
                 }
             },
             complete: (data) => {
