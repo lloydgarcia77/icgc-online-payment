@@ -97,7 +97,7 @@ $(function () {
                             
                                     <tr>
                                         <td>Status</td>
-                                        <td>${response.status}</td>
+                                        <td>${'Success' ? response.status === 'succeeded' : response.status}</td>
                                     </tr>
                                     <tr>
                                         <td>Currency</td>
@@ -209,7 +209,7 @@ $(function () {
                             )
                         } else {
                             Swal.fire(
-                                'Unpaid/Voided/Refunded/Faild Transaction',
+                                'Unpaid/Voided/Refunded/Failed Transaction',
                                 'Please pay the bills on this transaction before you can retrieve the game details you bought!',
                                 'error'
                             )

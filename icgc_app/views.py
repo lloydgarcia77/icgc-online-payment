@@ -397,33 +397,36 @@ def transaction_po_send_mail(request, *args, **kwargs):
 
     if request.is_ajax():
         if request.method == 'POST':
-            response = payment_gateway.check_transaction_status(transaction.charge_id)
-             
-            response = vars(response) 
+            try:
+                response = payment_gateway.check_transaction_status(transaction.charge_id) 
+                response = vars(response) 
 
-            if response.get('status').lower() == 'SUCCEEDED'.lower(): 
-                email_context = {
-              
-                    'transaction': transaction,
-                }
-
-    
-                from_email = 'icaregamecredits@gmail.com' 
-                recipient = transaction.email if transaction.email else request.user.email
+                if response.get('status').lower() == 'SUCCEEDED'.lower(): 
+                    email_context = {
                 
-                subject = 'ICareGameCredits Purchase Order Receipt'
-                html_message = render_to_string('email/transaction_success.html', email_context)
-                plain_message = strip_tags(html_message)
-                send_mail(
-                    subject,
-                    plain_message,
-                    from_email,
-                    [recipient,from_email,'marcosgabrhieljacob@gmail.com','cdeocampo103@gmail.com'],
-                    html_message=html_message,
-                ) 
-                data['is_valid'] = True 
-            else:
-                data['is_valid'] = False  
+                        'transaction': transaction,
+                    }
+
+        
+                    from_email = 'icaregamecredits@gmail.com' 
+                    recipient = transaction.email if transaction.email else request.user.email
+                    
+                    subject = 'ICareGameCredits Purchase Order Receipt'
+                    html_message = render_to_string('email/transaction_success.html', email_context)
+                    plain_message = strip_tags(html_message)
+                    send_mail(
+                        subject,
+                        plain_message,
+                        from_email,
+                        [recipient,from_email,'marcosgabrhieljacob@gmail.com','cdeocampo103@gmail.com'],
+                        html_message=html_message,
+                    ) 
+                    data['is_valid'] = True 
+                else:
+                    data['is_valid'] = False  
+            except xendit.xendit_error.XenditError as e:
+                data['is_valid'] = False
+                data['error'] = f'Error: {e}'
         return JsonResponse(data)
     else:
 

@@ -220,4 +220,21 @@ $(document).ready(function () {
 
         billingForm.submit();
     })
+
+
+
+    $("input[name='toggle-email']").on("click", function(e){
+
+        let email = $('input[name="email"]');
+        let contact = $('input[name="contact"]'); 
+
+        if($(this).is(":checked")){
+            email.prop('readonly', false);
+            contact.prop('readonly', false);
+            email.select(); 
+        }else{
+            email.prop('readonly', true);
+            contact.prop('readonly', true);
+        }
+    })
 })
