@@ -274,7 +274,7 @@ def dashboard(request, *args, **kwargs):
         'user': user,
         'query': query,
         'objects': objects,
-        'total_amount': objects.aggregate(Sum('amount__amount')).get('amount__amount__sum'),
+        'total_amount': objects.aggregate(Sum('amount__amount')).get('amount__amount__sum').filter(status=True),
         'total_success': objects.filter(status=True).count(),
         'total_pending': objects.filter(status=False).count()
     }
