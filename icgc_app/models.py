@@ -229,6 +229,7 @@ class Transaction(models.Model):
     email = models.EmailField(blank=True, null=True, max_length=50)
     mobile_number = models.CharField(max_length=15, blank=True, null=True)
     transaction_date = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)
     charge_id = models.CharField(max_length=255, blank=True, null=True)
     
     def __str__(self):

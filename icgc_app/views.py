@@ -203,6 +203,82 @@ def contact_us(request, *args, **kwargs):
     }
     return render(request, template_name, context)
 
+# NOTE: Admin Only
+
+@login_required
+def dashboard(request, *args, **kwargs):
+    template_name = 'admin/dashboard.html' 
+    user = get_object_or_404(models.User, email=request.user.email, is_valid=True, is_staff=True, is_superuser=True)
+     
+    search = request.GET.get('search_value','')
+    by_transaction_date = request.GET.get('by_transaction_date','')
+    months = request.GET.get('months','')
+    years = request.GET.get('years','')
+
+    objects = models.Transaction.objects.all().order_by('-transaction_date') 
+
+    if request.method == 'GET':
+        if search.strip(): 
+            objects = objects.filter(
+                Q(transaction_id__icontains=search) |
+                Q(reference_id__icontains=search) |  
+                Q(user__email__icontains=search)  |
+                Q(game__name__icontains=search)  |
+                Q(payment_method__name__icontains=search)  |
+                Q(email__icontains=search) 
+                ) 
+              # Departure_Date.objects.filter(date_from__year__gte=year,
+        #                       date_from__month__gte=month,
+        #                       date_to__year__lte=year,
+        #                       date_to__month__lte=month)  
+
+        # NOTE: If by transaction filter radio button is selected
+        if by_transaction_date.strip():
+            # datetime_format = '%m/%d/%Y %H:%M:%S' 
+            
+            now = datetime.now() 
+            yesterday = now-timedelta(days=1) 
+            past_7_days = now-timedelta(days=7)
+ 
+            filter_option = {
+                'today': Q(transaction_date__lte=make_aware(now)) & Q(transaction_date__gte=make_aware(yesterday)),
+                'past_7_days': Q(transaction_date__lte=make_aware(now)) & Q(transaction_date__gte=make_aware(past_7_days)),
+                'this_month': Q(transaction_date__month__lte=now.month) & Q(transaction_date__month__gte=now.month),
+                'this_year': Q(transaction_date__year__lte=now.year) & Q(transaction_date__year__gte=now.year),
+            }
+            
+            objects = objects.filter(filter_option.get(by_transaction_date))
+        else: 
+            if months.strip():
+                objects = objects.filter(
+                    Q(transaction_date__month__lte=months) & Q(transaction_date__month__gte=months)
+                )
+            if years.strip():
+                objects = objects.filter(
+                    Q(transaction_date__year__lte=years) & Q(transaction_date__year__gte=years)
+                )
+          
+        
+        page = request.GET.get('page', 1)
+
+        paginator = Paginator(objects, 10)
+
+        try:
+            query = paginator.page(page)
+        except PageNotAnInteger:
+            query = paginator.page(1)
+        except EmptyPage:
+            query = paginator.page(paginator.num_pages)
+ 
+    context = {
+        'user': user,
+        'query': query,
+        'objects': objects,
+        'total_amount': objects.aggregate(Sum('amount__amount')).get('amount__amount__sum'),
+        'total_success': objects.filter(status=True).count(),
+        'total_pending': objects.filter(status=False).count()
+    }
+    return render(request, template_name, context)
 
 # NOTE: Login start's here
 
@@ -360,8 +436,7 @@ def transactions(request, *args, **kwargs):
         'transactions': transactions,
     }
     return render(request, template_name, context)
-
-
+ 
 @login_required
 def transaction_status(request, *args, **kwargs): 
     template_name = 'transactions/check_status.html'
@@ -378,7 +453,12 @@ def transaction_status(request, *args, **kwargs):
                 
                 response = json.dumps(vars(response))
                 
+                dres = json.loads(response) 
                 # print(json.dumps(json.loads(response), indent=4)) 
+                if dres.get('status').lower() == 'SUCCEEDED'.lower():
+                    transaction.status = True
+                    transaction.save()
+
                 data['is_valid'] = True
                 data['response'] = response
             except xendit.xendit_error.XenditError as e:
@@ -431,8 +511,7 @@ def transaction_po_send_mail(request, *args, **kwargs):
     else:
 
         raise Http404
-
-
+ 
 
 @login_required
 def delete_transaction(request, *args, **kwargs): 
@@ -450,7 +529,7 @@ def delete_transaction(request, *args, **kwargs):
         return JsonResponse(data, status=200)
     else:
         raise Http404
-
+ 
 
 @login_required
 def void_transaction(request, *args, **kwargs): 
@@ -469,7 +548,7 @@ def void_transaction(request, *args, **kwargs):
         return JsonResponse(data)
     else:
         raise Http404
-
+ 
 
 @login_required
 def refund_transaction(request, *args, **kwargs): 
@@ -520,12 +599,14 @@ def success_page(request, *args, **kwargs):
 
     return render(request, template_name)
 
+
 @csrf_exempt
 def failure_page(request, *args, **kwargs):
     template_name = "redirection_pages/failed.html"
 
 
     return render(request, template_name)
+
 
 @csrf_exempt
 def cancel_page(request, *args, **kwargs):

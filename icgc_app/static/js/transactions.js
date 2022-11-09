@@ -97,7 +97,7 @@ $(function () {
                             
                                     <tr>
                                         <td>Status</td>
-                                        <td>${'Success' ? response.status === 'succeeded' : response.status}</td>
+                                        <td>${response.status.toLowerCase() === 'SUCCEEDED'.toLowerCase() ? 'Success'.toLocaleUpperCase() : response.status}</td> 
                                     </tr>
                                     <tr>
                                         <td>Currency</td>
@@ -128,12 +128,20 @@ $(function () {
                                                         </td>
                                                             `: `` 
                                                         }
-                                                    <td>
-                                                        <a href="${response.actions.mobile_deeplink_checkout_url}" target="_blank" class="btn bg-gradient-primary btn-block">
-                                                        <i class="fas fa-mobile-alt mr-1"></i>
-                                                            Pay Mobile URL
-                                                        </a>
-                                                    </td>
+                                                        ${
+                                                            response.actions.mobile_deeplink_checkout_url ? 
+                                                            `
+                                                            <td>
+                                                                <a href="${response.actions.mobile_deeplink_checkout_url}" target="_blank" class="btn bg-gradient-primary btn-block">
+                                                                <i class="fas fa-mobile-alt mr-1"></i>
+                                                                    Pay Mobile URL 
+                                                                </a>
+                                                            </td>
+                                                            `
+                                                            : 
+                                                            ''
+                                                        }
+                                                   
                                                 </tr>
                                             </tbody>
                                         </table>

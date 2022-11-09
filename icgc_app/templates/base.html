@@ -80,6 +80,16 @@
                     <div class="collapse navbar-collapse order-3" id="navbarCollapse">
 
                         <ul class="navbar-nav">
+                            {% if request.user.is_authenticated  and request.user.is_valid and request.user.is_staff and request.user.is_superuser %}
+                            {% block nav_dashboard %} 
+                            <li class="nav-item">
+                                <a href="{% url 'icgc_app:dashboard' %}" class="nav-link text-uppercase">
+                                    Dashboard
+                                    <span class="badge badge-success">New!</span>
+                                </a>
+                            </li>
+                            {% endblock nav_dashboard %}
+                            {% endif %}
 
                             {% block nav_products %}
 

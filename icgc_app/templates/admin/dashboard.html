@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+ICareGameCredits | Dashboard
+{% endblock title%}
+
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<style>
+    table td {
+        vertical-align: middle !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+    }
+</style>
+{% endblock additional_css %}
+
+
+{% block nav_dashboard %}
+
+<li class="nav-item">
+    <a href="{% url 'icgc_app:dashboard' %}" class="nav-link text-uppercase active">
+        Dashboard
+        <span class="badge badge-success">New!</span>
+    </a>
+</li>
+{% endblock nav_dashboard %}
+
+
+{% block content_body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-info"><i class="fas fa-shopping-bag"></i></span>
+                <div class="info-box-content text-lg">
+                    <span class="info-box-text">Transactions</span>
+                    <span class="info-box-number">{{ objects.count|intcomma}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-danger"><i class="fas fa-money-bill-wave"></i></span>
+                <div class="info-box-content text-lg">
+                    <span class="info-box-text">Total Amount</span>
+                    <span class="info-box-number">{{ total_amount|intcomma}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-success"><i class="fas fa-clipboard-check"></i></span>
+                <div class="info-box-content text-lg">
+                    <span class="info-box-text">Success</span>
+                    <span class="info-box-number">{{ total_success|intcomma}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-warning"><i class="fas fa-clock"></i></span>
+                <div class="info-box-content text-lg">
+                    <span class="info-box-text">Pending</span>
+                    <span class="info-box-number">{{ total_pending|intcomma}}</span>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Transactions List</h3>
+
+                </div>
+
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Reference ID</th>
+                                <th>Buyer</th>
+                                <th>Game / Amount</th>
+                                <th>Payment Method</th>
+                                <th>Receiver</th>
+                                <th>Status</th>
+                                <th>Transaction Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-uppercase">
+
+                            {% for t in query %}
+                            <tr>
+                                <td>
+                                    <span class="m-0">{{ t.transaction_id }}</span>
+                                    <button class="btn-cc btn bg-gradient-secondary btn-sm ml-1" data-toggle="tooltip"
+                                        data-placement="top" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <span class="m-0">{{ t.reference_id }}</span>
+                                    <button class="btn-cc btn bg-gradient-secondary btn-sm ml-1" data-toggle="tooltip"
+                                        data-placement="top" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </td>
+                                <td>{{ t.user.email }}</td>
+                                <td>{{ t.game.name }} ({{ t.amount.description }})</td>
+                                <td>{{ t.payment_method.name }}</td>
+                                <td>{{ t.email }}</td>
+                                <td>
+                                    {% if t.status %}
+                                    <span class="badge badge-success">Success</span>
+                                    {% else %}
+                                    <span class="badge badge-warning">Pending</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ t.transaction_date }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn bg-gradient-secondary dropdown-toggle dropdown-icon"
+                                            data-toggle="dropdown" aria-expanded="false">
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right p-1" role="menu">
+                                            <button type="button" data-url="{{ t.get_absolute_url_check_status }}"
+                                                class="btn btn-block bg-gradient-info btn-check-status" data-toggle="tooltip"
+                                                data-placement="top" title="Status">
+                                                <i class="fas fa-clipboard-list mr-1"></i> Status
+                                            </button> 
+                                            <button data-url="{{ t.get_absolute_url_delete }}" type="button"
+                                                class="btn btn-block bg-gradient-danger delete" data-toggle="tooltip"
+                                                data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-alt mr-1"></i> Delete
+                                            </button>
+                            
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+
+                            <tr>
+                                <td class="text-center text-danger" colspan="9">No Available Records Found!</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-footer">
+                    {% include 'paginators/paginate.html' %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <form method="GET">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <b>
+                                Filter Options
+                            </b>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Search for keywords:</label>
+                                    <input type="text" name="search_value" class="form-control"
+                                        value="{{request.GET.search_value}}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Month:</label>
+                                    <select name="months" id="months" class="select2" style="width:100%"
+                                        data-value="{{request.GET.months}}">
+                                        <option></option>
+                                        <option value="00">January</option>
+                                        <option value="01">February</option>
+                                        <option value="02">March</option>
+                                        <option value="03">April</option>
+                                        <option value="04">May</option>
+                                        <option value="05">June</option>
+                                        <option value="06">July</option>
+                                        <option value="07">August</option>
+                                        <option value="08">September</option>
+                                        <option value="09">October</option>
+                                        <option value="10">November</option>
+                                        <option value="11">December</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Years:</label>
+                                    <select name="years" id="years" class="select2" style="width:100%"
+                                        data-value="{{request.GET.years}}">
+                                        <option></option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>By transaction date:</label>
+                                <div class="form-group transaction-date-container"
+                                    data-value="{{request.GET.by_transaction_date}}">
+
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="today"
+                                            name="by_transaction_date" value="today">
+                                        <label for="today" class="custom-control-label">Today</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="past_7_days"
+                                            name="by_transaction_date" value="past_7_days">
+                                        <label for="past_7_days" class="custom-control-label">Past 7 days</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="this_month"
+                                            name="by_transaction_date" value="this_month">
+                                        <label for="this_month" class="custom-control-label">This month</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="this_year"
+                                            name="by_transaction_date" value="this_year">
+                                        <label for="this_year" class="custom-control-label">This year</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'icgc_app:dashboard' %}" class="btn btn-danger">
+                            Clear all filters
+                        </a>
+                        <button type="submit" class="btn btn-primary float-right">
+                            <i class="fas fa-filter mr-1"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock content_body %}
+
+{% block rearscript %}
+<script src="{% static 'js/micelleneous/getcookies.js' %}" defer></script>
+<script src="{% static 'js/dashboard.js' %}" defer></script>
+{% endblock rearscript %}

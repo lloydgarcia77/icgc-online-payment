@@ -6,6 +6,7 @@ app_name = "icgc_app"
 
 urlpatterns = [
     path('', views.index, name='index'), 
+    path('dashboard/', views.dashboard, name='dashboard'), 
     path('profile/', views.profile_page, name='profile_page'), 
     path('transactions/', views.transactions, name='transactions'), 
     path('transactions-status/<uuid:id>/', views.transaction_status, name='transaction_status'), 
