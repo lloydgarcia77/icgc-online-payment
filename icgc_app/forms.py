@@ -76,7 +76,7 @@ class RegistrationForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('email', 'f_name', 'm_name',
-                   'l_name', 'gender', 'dob', 'age', 'contact_no', 'address')
+                   'l_name', 'gender', 'dob', 'contact_no', 'address')
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
@@ -108,10 +108,10 @@ class RegistrationForm(forms.ModelForm):
             'class': 'form-control  ',  
             'required': 'required'
         }
-        self.fields['age'].widget.attrs = {
-            'class': 'form-control  ',  
-            'required': 'required'
-        }
+        # self.fields['age'].widget.attrs = {
+        #     'class': 'form-control  ',  
+        #     'required': 'required'
+        # }
         self.fields['dob'].widget.attrs = {
             'class': 'form-control  ',  
             'placeholder': 'MM/DD/YYYY', 
@@ -230,7 +230,7 @@ class ProfileForm(forms.ModelForm):
  
     class Meta:
         model = User
-        fields = ( 'f_name', 'm_name', 'l_name', 'gender', 'dob', 'age', 'contact_no', 'address')
+        fields = ( 'f_name', 'm_name', 'l_name', 'gender', 'dob', 'contact_no', 'address')
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
@@ -258,10 +258,10 @@ class ProfileForm(forms.ModelForm):
             'class': 'form-control  ',  
             'required': 'required'
         }
-        self.fields['age'].widget.attrs = {
-            'class': 'form-control  ',  
-            'required': 'required'
-        }
+        # self.fields['age'].widget.attrs = {
+        #     'class': 'form-control  ',  
+        #     'required': 'required'
+        # }
         self.fields['dob'].widget.attrs = {
             'class': 'form-control  ',  
             'placeholder': 'MM/DD/YYYY', 

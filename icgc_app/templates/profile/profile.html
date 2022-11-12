@@ -40,10 +40,12 @@ ICareGameCredits | Profile
                                     <label>Gender:</label>
                                     {{ form.gender }}
                                 </div>
-                                <div class="form-group">
+                                {% block comment %}
+                                <!-- <div class="form-group">
                                     <label>Age:</label>
                                     {{ form.age }}
-                                </div>
+                                </div> -->
+                                {% endblock comment %}
                                 <div class="form-group">
                                     <label>Date of Birth:</label>
                                     {{ form.dob }}

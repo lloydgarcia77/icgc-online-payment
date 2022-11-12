@@ -71,7 +71,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     l_name = models.CharField(max_length=50, verbose_name="Last Name")
     gender =  models.CharField(max_length=10, choices=GENDER_LIST, default=MALE)
     dob = models.DateField()
-    age = models.IntegerField()
+    age = models.IntegerField(blank=True, null=True, default=0)
     contact_no =  models.CharField(max_length=15,  unique=True)
     address  = models.TextField()
     date_added = models.DateTimeField(auto_now=True) 
